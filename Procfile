@@ -1,1 +1,1 @@
-web: gunicorn __init__:app --chdir=./site --log-file -
+web: gunicorn site:app --log-file -
