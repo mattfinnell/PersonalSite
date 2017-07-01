@@ -9,14 +9,14 @@ class Config(object) :
     Testing = False
     DEBUG = True
 
-class ProductionConfig(Config) :
-    DEBUG = False
-
-class StagingConfig(Config) :
-    DEVELOPMENT = True
-
 class DevelopmentConfig(Config) :
     DEVELOPMENT = True
 
 class TestingConfig(Config) :
     TESTING = True
+
+class StagingConfig(Config) :
+    DEVELOPMENT = True
+
+class ProductionConfig(Config) :
+    DEBUG = False
