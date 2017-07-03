@@ -105,5 +105,11 @@ ENV/
 #  \___/\__,_/____/\__/\____/_/ /_/ /_/  /_/\__, /_/ /_/\____/_/   \___/____/  
 #                                          /____/                              
 
+# Obnoxious DS_Store file that OSX uses
+.DS_store 
+
 # local virtual environment folder
 .site-env/
+
+# Ignore directory
+.ignore/
