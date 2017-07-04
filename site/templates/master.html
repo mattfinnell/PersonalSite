@@ -13,9 +13,20 @@
 
 		<title>Matt Finnell | {% block title %} {% endblock %} </title>
 
-		<link rel="stylesheet" crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" >
+    {% if config.DEVELOPMENT %}
+      <link rel="stylesheet" href="/static/development/font-awesome-4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="/static/development/bootstrap-3.3.7/css/bootstrap-theme.css" />
+		{% else %}
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		{% endif %}
+
 		<!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/static/css/theme.css"/>
+    {% if config.DEVELOPMENT %}
+      <link rel="stylesheet" href="/static/development/theme.css" />
+		{% else %}
+      <link rel="stylesheet" href="/static/css/theme.css"/>
+		{% endif %}
 		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="/static/css/style.css"/>
@@ -46,8 +57,14 @@
 		{% block content %} {% endblock %}
 		{% block footer %} {% endblock %}
 
-		<script type="text/javascript" crossorigin="anonymous" src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" ></script>
-		<script type="text/javascript" crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
+    {% if config.DEVELOPMENT %}
+      <script type="text/javascript" src="/static/development/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="/static/development/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		{% else %}
+      <script type="text/javascript" crossorigin="anonymous" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" ></script>
+      <script type="text/javascript" crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
+		{% endif %}
+
 		<script type="text/javascript" src="/static/js/utils.js"></script>
 		<script type="text/javascript" src="/static/js/script.js"></script>
 
