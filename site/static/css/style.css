@@ -32,6 +32,14 @@ ul.icons li a:before{
 	text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
 }
 
+ul.icons li a.fa-instagram:hover {
+	border-color: rgba(255, 116, 150, 1);
+}
+
+ul.icons li a.fa-instagram:hover:before {
+	text-shadow: 1.25px 0px 0px rgba(255, 116, 150, 1), -1.25px 0px 0px rgba(255, 116, 150, 1), 0px 1.25px 0px rgba(255, 116, 150, 1), 0px -1.25px 0px rgba(255, 116, 150, 1);
+}
+
 ul.icons li a.fa-soundcloud:hover {
 	border-color: rgb(255, 85, 0);
 }
@@ -88,5 +96,49 @@ ul.icons li a.fa-envelope-o:hover:before {
 	#landing .avatar img {
 		width : 100px;
 		height : 100px;
+	}
+}
+
+/* set to 1366px when finished */
+@media screen and (max-width: 1366px) {
+
+	ul.icons li a.fa-soundcloud {
+		border-color: rgba(255, 85, 0, 0.2);
+	}
+
+	ul.icons li a.fa-soundcloud:before {
+		text-shadow: 1.25px 0px 0px rgba(255, 85, 0, 0.2), -1.25px 0px 0px rgba(255, 85, 0, 0.2), 0px 1.25px 0px rgba(255, 85, 0, 0.2), 0px -1.25px 0px rgba(255, 85, 0, 0.2);
+	}
+
+	ul.icons li a.fa-github {
+		border-color: rgba(0, 0, 0, 0.2);
+	}
+
+	ul.icons li a.fa-github:before {
+		text-shadow: 1.25px 0px 0px rgba(0, 0, 0, 0.2), -1.25px 0px 0px rgba(0, 0, 0, 0.2), 0px 1.25px 0px rgba(0, 0, 0, 0.2), 0px -1.25px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	ul.icons li a.fa-linkedin {
+		border-color: rgba(0, 115, 177, 0.2);
+	}
+
+	ul.icons li a.fa-linkedin:before {
+		text-shadow: 1.25px 0px 0px rgba(0, 115, 177, 0.2), -1.25px 0px 0px rgba(0, 115, 177, 0.2), 0px 1.25px 0px rgba(0, 115, 177, 0.2), 0px -1.25px 0px rgba(0, 115, 177, 0.2);
+	}
+
+	ul.icons li a.fa-envelope-o {
+		border-color: rgba(255, 68, 68, 0.2);
+	}
+
+	ul.icons li a.fa-envelope-o:before {
+		text-shadow: 1.25px 0px 0px rgba(255, 68, 68, 0.2), -1.25px 0px 0px rgba(255, 68, 68, 0.2), 0px 1.25px 0px rgba(255, 68, 68, 0.2), 0px -1.25px 0px rgba(255, 68, 68, 0.2);
+	}
+
+	ul.icons li a.fa-instagram {
+		border-color: rgba(255, 116, 150, 0.3);
+	}
+
+	ul.icons li a.fa-instagram:before {
+		text-shadow: 1.25px 0px 0px rgba(255, 116, 150, 0.3), -1.25px 0px 0px rgba(255, 116, 150, 0.3), 0px 1.25px 0px rgba(255, 116, 150, 0.3), 0px -1.25px 0px rgba(255, 116, 150, 0.3);
 	}
 }
