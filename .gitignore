@@ -14,9 +14,11 @@
 # local virtual environment folder (python virtualenv)
 .site-env/
 
-
 # Theme folder that I use for quick reference for the template
 site/theme/
+
+# Folder for local copies of bootstrap, jquery, and other page resources 
+site/static/development/
 
 #      ____       ____            ____     ____                                
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
