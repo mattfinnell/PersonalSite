@@ -99,7 +99,6 @@ ul.icons li a.fa-envelope-o:hover:before {
 	}
 }
 
-/* set to 1366px when finished */
 @media screen and (max-width: 1366px) {
 
 	ul.icons li a.fa-soundcloud {
