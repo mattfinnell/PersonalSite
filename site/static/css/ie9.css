@@ -3,39 +3,40 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 /* Basic */
-
+/* line 14, static/sass/ie9.scss */
 body {
-	background-image: url("../../images/bg.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: bottom center;
-	background-attachment: fixed;
+  background-image: url("../../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
 }
 
+/* line 21, static/sass/ie9.scss */
 body:after {
-	display: none;
+  display: none;
 }
 
 /* List */
-
+/* line 32, static/sass/ie9.scss */
 ul.icons li a:before {
-	color: #c8cccf;
+  color: #c8cccf;
 }
 
+/* line 37, static/sass/ie9.scss */
 ul.icons li a:hover:before {
-	color: #ff7496;
+  color: #ff7496;
 }
 
 /* Wrapper */
-
+/* line 48, static/sass/ie9.scss */
 #wrapper {
-	text-align: center;
+  text-align: center;
 }
 
 /* Main */
-
+/* line 54, static/sass/ie9.scss */
 #main {
-	display: inline-block;
+  display: inline-block;
 }

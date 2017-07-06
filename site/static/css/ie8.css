@@ -3,34 +3,36 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 /* List */
-
+/* line 17, static/sass/ie8.scss */
 ul.icons li a {
-	-ms-behavior: url("assets/js/PIE.htc");
+  -ms-behavior: url("assets/js/PIE.htc");
 }
 
+/* line 20, static/sass/ie8.scss */
 ul.icons li a:before {
-	text-align: center;
-	font-size: 26px;
+  text-align: center;
+  font-size: 26px;
 }
 
 /* Main */
-
+/* line 31, static/sass/ie8.scss */
 #main {
-	-ms-behavior: url("assets/js/PIE.htc");
+  -ms-behavior: url("assets/js/PIE.htc");
 }
 
+/* line 35, static/sass/ie8.scss */
 #main .avatar img {
-	-ms-behavior: url("assets/js/PIE.htc");
+  -ms-behavior: url("assets/js/PIE.htc");
 }
 
 /* Footer */
-
+/* line 43, static/sass/ie8.scss */
 #footer {
-	color: #fff;
+  color: #fff;
 }
 
+/* line 47, static/sass/ie8.scss */
 #footer .copyright li {
-	border-left: solid 1px #fff;
+  border-left: solid 1px #fff;
 }
