@@ -12,7 +12,6 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 
 @app.route("/")
 def index() :
-    utils.compile_sass(app.config)
     return render_template("landing.html")
 
 @app.context_processor

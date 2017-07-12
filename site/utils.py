@@ -10,7 +10,6 @@ def _clear_directory(dir_path) :
         except :
             pass # Not the best practice but it serves it's purpose perfectly
 
-
 def compile_sass(env) :
 
     _clear_directory("static/css")
@@ -20,4 +19,3 @@ def compile_sass(env) :
         output_style = env["SASS_OUTPUT_STYLE"],
         source_comments = env["SASS_OUTPUT_COMMENTS"]
     )
-
