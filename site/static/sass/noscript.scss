@@ -1,6 +1,3 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
 @import 'libs/skel';
 
 /*
@@ -10,16 +7,14 @@
 */
 
 /* Basic */
-
-	body {
-		&:after {
-			display: none;
-		}
-	}
+body {
+  &:after {
+    display: none;
+  }
+}
 
 /* Main */
-
-	#main {
-		@include vendor('transform', 'none !important');
-		opacity: 1 !important;
-	}
+#main {
+  @include vendor('transform', 'none !important');
+  opacity: 1 !important;
+}

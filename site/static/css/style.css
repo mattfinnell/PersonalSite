@@ -1,143 +1,331 @@
+/*
+ *       _____ __        __                          
+ *      / ___// /___  __/ /__    ____________________
+ *      \__ \/ __/ / / / / _ \  / ___/ ___/ ___/ ___/
+ *     ___/ / /_/ /_/ / /  __/ (__  ) /__(__  |__  ) 
+ *    /____/\__/\__, /_/\___(_)____/\___/____/____/  
+ *             /____/                                
+ */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+/* line 51, static/sass/style.scss */
+.icons {
+  margin: 0 0 2.0em 0;
+}
+
+/* line 55, static/sass/style.scss */
+.icons li {
+  padding: 0.675em 0.5em;
+}
+
+/* line 59, static/sass/style.scss */
+.icons li a {
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
+  text-indent: 3em;
+  border-color: #c4cccf;
+  display: inline-block;
+  border-radius: 100%;
+  border: solid 1px #c4cccf;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+/* line 72, static/sass/style.scss */
+.icons li a:before {
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  text-indent: 3px;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+  text-shadow: 1.25px 0 0 #c4cccf, -1.25px 0 0 #c4cccf, 0 1.25px 0 #c4cccf, -1.25px 0 #c4cccf;
+  color: #fffffd;
+  font-family: FontAwesome;
+}
+
+/* line 91, static/sass/style.scss */
+.icons .fa-soundcloud:hover {
+  border-color: rgba(255, 85, 0, 0.4);
+}
+
+/* line 95, static/sass/style.scss */
+.icons .fa-soundcloud:hover:before {
+  text-shadow: 1.25px 0 0 rgba(255, 85, 0, 0.4), -1.25px 0 0 rgba(255, 85, 0, 0.4), 0 1.25px 0 rgba(255, 85, 0, 0.4), -1.25px 0 rgba(255, 85, 0, 0.4);
+}
+
+/* line 91, static/sass/style.scss */
+.icons .fa-github:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 95, static/sass/style.scss */
+.icons .fa-github:hover:before {
+  text-shadow: 1.25px 0 0 rgba(0, 0, 0, 0.4), -1.25px 0 0 rgba(0, 0, 0, 0.4), 0 1.25px 0 rgba(0, 0, 0, 0.4), -1.25px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* line 91, static/sass/style.scss */
+.icons .fa-linkedin:hover {
+  border-color: rgba(0, 155, 177, 0.4);
+}
+
+/* line 95, static/sass/style.scss */
+.icons .fa-linkedin:hover:before {
+  text-shadow: 1.25px 0 0 rgba(0, 155, 177, 0.4), -1.25px 0 0 rgba(0, 155, 177, 0.4), 0 1.25px 0 rgba(0, 155, 177, 0.4), -1.25px 0 rgba(0, 155, 177, 0.4);
+}
+
+/* line 91, static/sass/style.scss */
+.icons .fa-envelope-o:hover {
+  border-color: rgba(255, 68, 68, 0.4);
+}
+
+/* line 95, static/sass/style.scss */
+.icons .fa-envelope-o:hover:before {
+  text-shadow: 1.25px 0 0 rgba(255, 68, 68, 0.4), -1.25px 0 0 rgba(255, 68, 68, 0.4), 0 1.25px 0 rgba(255, 68, 68, 0.4), -1.25px 0 rgba(255, 68, 68, 0.4);
+}
+
+/* line 91, static/sass/style.scss */
+.icons .fa-instagram:hover {
+  border-color: rgba(255, 116, 150, 0.4);
+}
+
+/* line 95, static/sass/style.scss */
+.icons .fa-instagram:hover:before {
+  text-shadow: 1.25px 0 0 rgba(255, 116, 150, 0.4), -1.25px 0 0 rgba(255, 116, 150, 0.4), 0 1.25px 0 rgba(255, 116, 150, 0.4), -1.25px 0 rgba(255, 116, 150, 0.4);
+}
+
+/* line 100, static/sass/style.scss */
+html, body, #wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 106, static/sass/style.scss */
 body#landing {
-	height: 100%;
-	background-color: #ffffff;
-	background-image: url("images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.20)), url("../images/Ferry.jpg");
-	background-image: url("images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.20)), url("../images/Ferry.jpg");
-	background-image: url("images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.20)), url("../images/Ferry.jpg");
-	background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.20)), url("../images/Ferry.jpg");
-	background-repeat: repeat,			no-repeat,			no-repeat;
-	background-size: 100px 100px, cover,				cover;
-	background-position: top left,		center center,		bottom center;
-	background-attachment: fixed,			fixed,				fixed;
+  background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.2)), url("../images/ferry.jpg");
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed;
+  background-position: top left, center center, bottom center;
+  background-size: 100px 100px, cover, cover;
+  font-family: "Source Sans Pro";
+  font-size: 11pt;
+  line-height: 1.5;
 }
 
+/* line 118, static/sass/style.scss */
+h1, h2, h3, h4, h5, h6, p, span, ul, ol, li {
+  font-weight: 200;
+}
+
+/* line 122, static/sass/style.scss */
+#landing h1 {
+  font-size: 1.85em;
+  margin: 0 0 14px 0;
+}
+
+/* line 127, static/sass/style.scss */
+#landing h2 {
+  font-size: 1.25em;
+  margin: 0 0 13px 0;
+}
+
+/* line 132, static/sass/style.scss */
+#landing section#main p {
+  margin: 0 0 20px 0;
+}
+
+/* line 136, static/sass/style.scss */
+#landing #wrapper {
+  display: flex;
+  padding: 1.5em;
+  height: calc(100% - 3em);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  /* For centering the content */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* line 152, static/sass/style.scss */
+#landing section#main {
+  min-width: 320px;
+  max-width: 100%;
+  background-color: #fffffd;
+  text-align: center;
+  padding: 4.5em 3em;
+  border-radius: 4px;
+  opacity: 0.925;
+}
+
+/* line 162, static/sass/style.scss */
+#landing .avatar {
+  position: relative;
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+/* line 168, static/sass/style.scss */
+#landing .avatar:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -3em;
+  width: calc(100% + 6em);
+  height: 1px;
+  z-index: -1;
+  background: #c4cccf;
+}
+
+/* line 180, static/sass/style.scss */
 #landing .avatar img {
-	width : 122px;
-	height : 122px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1.5em #fffffd;
+  height: 122px;
+  width: 122px;
 }
 
-ul.icons li a {
-	border-color : #c8cccf;
-	height : 3em;
-	width  : 3em;
-	line-height : 3em;
-	text-indent : 3em;
+/* line 187, static/sass/style.scss */
+#landing ul {
+  list-style: None;
+  margin: 0;
+  padding: 0;
 }
 
-ul.icons li a:before {
-	font-size : 1.5em;
+/* line 193, static/sass/style.scss */
+#landing ul.icons li {
+  display: inline;
+  font-family: font-awesome;
 }
 
-ul.icons li a:before{
-	text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
+/* line 198, static/sass/style.scss */
+#landing div#wrapper > footer {
+  color: #fffffd;
+  font-size: 0.9em;
+  margin: 20px;
 }
 
-ul.icons li a.fa-instagram:hover {
-	border-color: rgba(255, 116, 150, 1);
+@media handheld {
+  /* line 207, static/sass/style.scss */
+  .icons .fa-soundcloud {
+    border-color: rgba(255, 85, 0, 0.4);
+  }
+  /* line 211, static/sass/style.scss */
+  .icons .fa-soundcloud:before {
+    text-shadow: 1.25px 0 0 rgba(255, 85, 0, 0.4), -1.25px 0 0 rgba(255, 85, 0, 0.4), 0 1.25px 0 rgba(255, 85, 0, 0.4), -1.25px 0 rgba(255, 85, 0, 0.4);
+  }
+  /* line 207, static/sass/style.scss */
+  .icons .fa-github {
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+  /* line 211, static/sass/style.scss */
+  .icons .fa-github:before {
+    text-shadow: 1.25px 0 0 rgba(0, 0, 0, 0.4), -1.25px 0 0 rgba(0, 0, 0, 0.4), 0 1.25px 0 rgba(0, 0, 0, 0.4), -1.25px 0 rgba(0, 0, 0, 0.4);
+  }
+  /* line 207, static/sass/style.scss */
+  .icons .fa-linkedin {
+    border-color: rgba(0, 155, 177, 0.4);
+  }
+  /* line 211, static/sass/style.scss */
+  .icons .fa-linkedin:before {
+    text-shadow: 1.25px 0 0 rgba(0, 155, 177, 0.4), -1.25px 0 0 rgba(0, 155, 177, 0.4), 0 1.25px 0 rgba(0, 155, 177, 0.4), -1.25px 0 rgba(0, 155, 177, 0.4);
+  }
+  /* line 207, static/sass/style.scss */
+  .icons .fa-envelope-o {
+    border-color: rgba(255, 68, 68, 0.4);
+  }
+  /* line 211, static/sass/style.scss */
+  .icons .fa-envelope-o:before {
+    text-shadow: 1.25px 0 0 rgba(255, 68, 68, 0.4), -1.25px 0 0 rgba(255, 68, 68, 0.4), 0 1.25px 0 rgba(255, 68, 68, 0.4), -1.25px 0 rgba(255, 68, 68, 0.4);
+  }
+  /* line 207, static/sass/style.scss */
+  .icons .fa-instagram {
+    border-color: rgba(255, 116, 150, 0.4);
+  }
+  /* line 211, static/sass/style.scss */
+  .icons .fa-instagram:before {
+    text-shadow: 1.25px 0 0 rgba(255, 116, 150, 0.4), -1.25px 0 0 rgba(255, 116, 150, 0.4), 0 1.25px 0 rgba(255, 116, 150, 0.4), -1.25px 0 rgba(255, 116, 150, 0.4);
+  }
 }
 
-ul.icons li a.fa-instagram:hover:before {
-	text-shadow: 1.25px 0px 0px rgba(255, 116, 150, 1), -1.25px 0px 0px rgba(255, 116, 150, 1), 0px 1.25px 0px rgba(255, 116, 150, 1), 0px -1.25px 0px rgba(255, 116, 150, 1);
+@media (max-height: 540px) and (min-aspect-ratio: 4 / 3), handheld and (orientation: landscape) {
+  /* line 218, static/sass/style.scss */
+  #landing section#main > * {
+    margin: 0 30px 0 0;
+  }
+  /* line 222, static/sass/style.scss */
+  #landing section#main > footer {
+    margin: 0;
+  }
+  /* display card across a row instead of as a column*/
+  /* line 227, static/sass/style.scss */
+  #landing section#main {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 3em;
+  }
+  /* Clear the Pinstripe on the avatar */
+  /* line 235, static/sass/style.scss */
+  #landing .avatar:before {
+    display: none;
+    margin-right: 20px;
+  }
+  /* Clear the outer shadow border on the avatar */
+  /* line 241, static/sass/style.scss */
+  #landing .avatar img {
+    box-shadow: 0 0 0 0 #fff;
+  }
+  /* line 245, static/sass/style.scss */
+  #landing section#main ul.icons li {
+    display: block;
+    padding: 0;
+  }
+  /* line 250, static/sass/style.scss */
+  #landing section#main ul.icons li a {
+    height: 2.25em;
+    width: 2.25em;
+    line-height: 2.25em;
+    text-indent: 2.25em;
+  }
+  /* line 254, static/sass/style.scss */
+  #landing section#main ul.icons li a:before {
+    font-size: 1.125em;
+  }
 }
 
-ul.icons li a.fa-soundcloud:hover {
-	border-color: rgb(255, 85, 0);
-}
-
-ul.icons li a.fa-soundcloud:hover:before {
-	text-shadow: 1.25px 0px 0px rgb(255, 85, 0), -1.25px 0px 0px rgb(255, 85, 0), 0px 1.25px 0px rgb(255, 85, 0), 0px -1.25px 0px rgb(255, 85, 0);
-}
-
-ul.icons li a.fa-github:hover {
-	border-color: #666;
-}
-
-ul.icons li a.fa-github:hover:before {
-	text-shadow: 1.25px 0px 0px #666, -1.25px 0px 0px #666, 0px 1.25px 0px #666, 0px -1.25px 0px #666;
-}
-
-ul.icons li a.fa-linkedin:hover {
-	border-color: rgb(0, 115, 177);
-}
-
-ul.icons li a.fa-linkedin:hover:before {
-	text-shadow: 1.25px 0px 0px rgb(0, 115, 177), -1.25px 0px 0px rgb(0, 115, 177), 0px 1.25px 0px rgb(0, 115, 177), 0px -1.25px 0px rgb(0, 115, 177);
-}
-
-ul.icons li a.fa-envelope-o:hover {
-	border-color: #f44;
-}
-
-ul.icons li a.fa-envelope-o:hover:before {
-	text-shadow: 1.25px 0px 0px #f44, -1.25px 0px 0px #f44, 0px 1.25px 0px #f44, 0px -1.25px 0px #f44;
-}
-
-@media screen and (max-width: 382px) {
-	#landing > div#wrapper {
-		padding : 0.75em 0px;
-	}
-
-	#landing ul.icons {
-		margin-bottom : 10px;
-	}
-
-	#landing ul.icons li a {
-		height : 2.5em;
-		width  : 2.5em;
-		line-height : 2.5em;
-		text-indent : 2.5em;
-	}
-	
-	#landing ul.icons li a:before {
-		top : -2px;
-		font-size : 1.5em;
-	}
-
-	#landing .avatar img {
-		width : 100px;
-		height : 100px;
-	}
-}
-
-@media screen and (max-width: 1366px) {
-
-	ul.icons li a.fa-soundcloud {
-		border-color: rgba(255, 85, 0, 0.2);
-	}
-
-	ul.icons li a.fa-soundcloud:before {
-		text-shadow: 1.25px 0px 0px rgba(255, 85, 0, 0.2), -1.25px 0px 0px rgba(255, 85, 0, 0.2), 0px 1.25px 0px rgba(255, 85, 0, 0.2), 0px -1.25px 0px rgba(255, 85, 0, 0.2);
-	}
-
-	ul.icons li a.fa-github {
-		border-color: rgba(0, 0, 0, 0.2);
-	}
-
-	ul.icons li a.fa-github:before {
-		text-shadow: 1.25px 0px 0px rgba(0, 0, 0, 0.2), -1.25px 0px 0px rgba(0, 0, 0, 0.2), 0px 1.25px 0px rgba(0, 0, 0, 0.2), 0px -1.25px 0px rgba(0, 0, 0, 0.2);
-	}
-
-	ul.icons li a.fa-linkedin {
-		border-color: rgba(0, 115, 177, 0.2);
-	}
-
-	ul.icons li a.fa-linkedin:before {
-		text-shadow: 1.25px 0px 0px rgba(0, 115, 177, 0.2), -1.25px 0px 0px rgba(0, 115, 177, 0.2), 0px 1.25px 0px rgba(0, 115, 177, 0.2), 0px -1.25px 0px rgba(0, 115, 177, 0.2);
-	}
-
-	ul.icons li a.fa-envelope-o {
-		border-color: rgba(255, 68, 68, 0.2);
-	}
-
-	ul.icons li a.fa-envelope-o:before {
-		text-shadow: 1.25px 0px 0px rgba(255, 68, 68, 0.2), -1.25px 0px 0px rgba(255, 68, 68, 0.2), 0px 1.25px 0px rgba(255, 68, 68, 0.2), 0px -1.25px 0px rgba(255, 68, 68, 0.2);
-	}
-
-	ul.icons li a.fa-instagram {
-		border-color: rgba(255, 116, 150, 0.3);
-	}
-
-	ul.icons li a.fa-instagram:before {
-		text-shadow: 1.25px 0px 0px rgba(255, 116, 150, 0.3), -1.25px 0px 0px rgba(255, 116, 150, 0.3), 0px 1.25px 0px rgba(255, 116, 150, 0.3), 0px -1.25px 0px rgba(255, 116, 150, 0.3);
-	}
+@media (max-width: 460px) {
+  /* line 260, static/sass/style.scss */
+  body#landing, #landing div#wrapper {
+    padding: 0;
+    width: 100%;
+  }
+  /* line 265, static/sass/style.scss */
+  #landing section#main {
+    margin: 40px 0 0 0;
+    padding: 25px 0 20px 0;
+    width: 100%;
+  }
+  /* line 271, static/sass/style.scss */
+  #landing section#main .avatar:before {
+    width: calc(100% + 3em);
+  }
+  /* line 275, static/sass/style.scss */
+  #landing section#main ul.icons li a {
+    height: 2.25em;
+    width: 2.25em;
+    line-height: 2.25em;
+    text-indent: 2.25em;
+  }
+  /* line 279, static/sass/style.scss */
+  #landing section#main ul.icons li a:before {
+    font-size: 1.125em;
+  }
 }

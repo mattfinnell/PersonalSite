@@ -1,8 +1,3 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
-
 /*
 	Identity by HTML5 UP
 	html5up.net | @ajlkn
@@ -10,42 +5,39 @@
 */
 
 /* List */
+ul {
+  &.icons {
+    li {
+      a {
+        -ms-behavior: url('assets/js/PIE.htc');
 
-	ul {
-		&.icons {
-			li {
-				a {
-					-ms-behavior: url('assets/js/PIE.htc');
-
-					&:before {
-						text-align: center;
-						font-size: 26px;
-					}
-				}
-			}
-		}
-	}
+        &:before {
+          text-align: center;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
 
 /* Main */
+#main {
+  -ms-behavior: url('assets/js/PIE.htc');
 
-	#main {
-		-ms-behavior: url('assets/js/PIE.htc');
-
-		.avatar {
-			img {
-				-ms-behavior: url('assets/js/PIE.htc');
-			}
-		}
-	}
+  .avatar {
+    img {
+      -ms-behavior: url('assets/js/PIE.htc');
+    }
+  }
+}
 
 /* Footer */
+#footer {
+  color: #fff;
 
-	#footer {
-		color: #fff;
-
-		.copyright {
-			li {
-				border-left: solid 1px #fff;
-			}
-		}
-	}
+  .copyright {
+    li {
+      border-left: solid 1px #fff;
+    }
+  }
+}

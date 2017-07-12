@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 /* Basic */
-/* line 14, static/sass/ie9.scss */
+/* line 8, static/sass/ie9.scss */
 body {
   background-image: url("../../images/bg.jpg");
   background-repeat: no-repeat;
@@ -13,30 +13,30 @@ body {
   background-attachment: fixed;
 }
 
-/* line 21, static/sass/ie9.scss */
+/* line 15, static/sass/ie9.scss */
 body:after {
   display: none;
 }
 
 /* List */
-/* line 32, static/sass/ie9.scss */
+/* line 25, static/sass/ie9.scss */
 ul.icons li a:before {
-  color: #c8cccf;
+  color: _palette(border);
 }
 
-/* line 37, static/sass/ie9.scss */
+/* line 30, static/sass/ie9.scss */
 ul.icons li a:hover:before {
-  color: #ff7496;
+  color: _palette(highlight);
 }
 
 /* Wrapper */
-/* line 48, static/sass/ie9.scss */
+/* line 40, static/sass/ie9.scss */
 #wrapper {
   text-align: center;
 }
 
 /* Main */
-/* line 54, static/sass/ie9.scss */
+/* line 45, static/sass/ie9.scss */
 #main {
   display: inline-block;
 }

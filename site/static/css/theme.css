@@ -2,10 +2,10 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
 /*
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+   Identity by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
 /* Reset */
 /* line 540, static/sass/libs/_skel.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -63,13 +63,6 @@ body {
 }
 
 /* Basic */
-@media screen and (max-width: 480px) {
-  /* line 15, static/sass/base/_page.scss */
-  html, body {
-    min-width: 320px;
-  }
-}
-
 /* line 25, static/sass/base/_page.scss */
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
   -moz-animation: none !important;
@@ -82,12 +75,12 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
   transition: none !important;
 }
 
-/* line 33, static/sass/base/_page.scss */
+/* line 32, static/sass/base/_page.scss */
 html {
   height: 100%;
 }
 
-/* line 37, static/sass/base/_page.scss */
+/* line 36, static/sass/base/_page.scss */
 body {
   height: 100%;
   background-color: #ffffff;
@@ -101,7 +94,7 @@ body {
   background-attachment: fixed,			fixed,				fixed;
 }
 
-/* line 50, static/sass/base/_page.scss */
+/* line 49, static/sass/base/_page.scss */
 body:after {
   content: '';
   display: block;
@@ -126,7 +119,7 @@ body:after {
   transition: opacity 1.75s ease-out;
 }
 
-/* line 74, static/sass/base/_page.scss */
+/* line 73, static/sass/base/_page.scss */
 body.is-loading:after {
   opacity: 1;
 }
@@ -143,14 +136,14 @@ body, input, select, textarea {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen {
   /* line 13, static/sass/base/_typography.scss */
   body, input, select, textarea {
     font-size: 11pt;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen {
   /* line 13, static/sass/base/_typography.scss */
   body, input, select, textarea {
     font-size: 10pt;
@@ -241,7 +234,7 @@ h6 {
   font-size: 1em;
 }
 
-@media screen and (max-width: 480px) {
+@media screen {
   /* line 102, static/sass/base/_typography.scss */
   h1 {
     font-size: 1.65em;
@@ -628,7 +621,7 @@ ul.icons li a:hover {
   border-color: #ff7496;
 }
 
-@media screen and (max-width: 480px) {
+@media screen {
   /* line 92, static/sass/components/_list.scss */
   ul.icons li a:before {
     font-size: 1.5rem;
@@ -827,7 +820,7 @@ button:disabled,
   background: #c8cccf;
 }
 
-@media screen and (max-width: 480px) {
+@media screen {
   /* line 13, static/sass/layout/_main.scss */
   #main {
     min-width: 0;
@@ -926,7 +919,7 @@ body.is-loading #main {
   display: block;
 }
 
-@media screen and (max-width: 360px) {
+@media screen {
   /* line 13, static/sass/layout/_wrapper.scss */
   #wrapper {
     padding: 0.75em;
