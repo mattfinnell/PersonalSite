@@ -21,7 +21,7 @@ site/theme/
 site/static/development/
 
 # Will be compiling sass instead of using dry css
-site/static/css
+site/static/css/*
 
 #      ____       ____            ____     ____                                
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
