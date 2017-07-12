@@ -12,7 +12,7 @@
 $primary_color : #fffffd;
 $accent_color : #c4cccf;
 
-$background_image : url("../images/ferry.jpg");
+$background_image : url("../images/Ferry.jpg");
 
 $gradient_color_a : rgba(255, 165, 150, 0.25);
 $gradient_color_b : rgba(0, 228, 255, 0.20);
@@ -104,7 +104,7 @@ html, body, #wrapper {
 }
 
 body#landing {
-  background-image: url("images/overlay.png"), linear-gradient(60deg, $gradient_color_a 5%, $gradient_color_b), $background_image;
+  background-image: url("../images/overlay.png"), linear-gradient(60deg, $gradient_color_a 5%, $gradient_color_b), $background_image;
   background-repeat : repeat, no-repeat, no-repeat;
   background-attachment : fixed, fixed, fixed;
   background-position : top left, center center, bottom center;
