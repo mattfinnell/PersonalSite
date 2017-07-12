@@ -108,7 +108,7 @@ html, body, #wrapper {
 
 /* line 106, static/sass/style.scss */
 body#landing {
-  background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.2)), url("../images/ferry.jpg");
+  background-image: url("../images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.25) 5%, rgba(0, 228, 255, 0.2)), url("../images/Ferry.jpg");
   background-repeat: repeat, no-repeat, no-repeat;
   background-attachment: fixed, fixed, fixed;
   background-position: top left, center center, bottom center;
