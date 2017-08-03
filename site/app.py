@@ -26,21 +26,6 @@ def about() :
     utils.compile_sass(app.config)
     return render_template("about.html")
 
-@app.route("/test_elements")
-def elements() :
-    utils.compile_sass(app.config)
-    return render_template("elements.html")
-
-@app.route("/test_generic")
-def generic() :
-    utils.compile_sass(app.config)
-    return render_template("generic.html")
-
-@app.route("/test")
-def test_index() :
-    utils.compile_sass(app.config)
-    return render_template("test.html")
-
 @app.context_processor
 def jinja_addons() :
     return {"now" : datetime.now()}
