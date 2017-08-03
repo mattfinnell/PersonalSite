@@ -15,17 +15,17 @@ body {
     padding : 5em 5em 3em 5em;
   }
 
+  section#content section,
+  footer {
+    padding : 3em 2em;
+  }
+
   section#content {
     background-color : white;
     border-radius : 5px;
 
     > section {
       border-top : solid 1px #ddd;
-      padding : 5em 5em 3em 5em;
     }
   }
-}
-
-.section-padded {
-  padding : 5em 5em 3em 5em;
 }

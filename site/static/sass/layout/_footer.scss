@@ -4,9 +4,7 @@
 $tool_icon_size : 20px;
 
 body > .wrapper > footer {
-  @include social_media_buttons(2em, 1.25px, $text_color, $accent_color);
-
-  padding : 60px;
+  @include social_media_buttons(2em, 1.25px, $text_color, $background_color_primary);
 
   section h2 {
     margin : 0 0 1em 0;
@@ -16,17 +14,23 @@ body > .wrapper > footer {
     margin : 0 0 2em 0;
   }
 
+  dl.alt {
+    display : inline-block;
+  }
+
   dl.alt dt {
     display : block;
-    width : 3em;
+    width : 2em;
     margin : 0;
     clear : left;
     float : left;
     font-weight : 400;
+    text-align : left;
   }
 
   dl.alt dd {
-    margin : 0 0 0.85em 5.5em;
+    margin : 0 0 0.85em 3.5em;
+    text-align : right;
   }
 
   ul.actions {
@@ -57,8 +61,6 @@ body > .wrapper > footer {
     font-weight : 100;
     font-size : 0.8em;
 
-    margin : 60px 0 0 0;
-
     color : $text_color;
 
     img {
@@ -67,43 +69,23 @@ body > .wrapper > footer {
     }
   }
 
+  .col-md-6:last-child {
+    text-align : right;
+  }
+
   @media(max-width: $device_md) {
     .col-md-6:first-child {
-      margin-bottom : 100px;
+      margin-bottom : 60px;
     }
 
-    section {
+    section, 
+    .col-md-6:last-child {
       text-align : center;
     }
 
     ul.actions li {
       width : 100%;
-
-      a.button {
-        width : 100%;
-        line-height : 2.5em;
-        height : 2.5em;
-      }
-    }
-
-    dl {
-      width : fit-content;
-
-      dt {
-        text-align : left;
-      }
-
-      dd {
-        text-align : right;
-      }
-    }
-
-    .social-media-buttons {
-      text-align : left;
-
-      li:first-child {
-        margin-left : 0px;
-      }
+      max-width : 10em;
     }
   }
 }
