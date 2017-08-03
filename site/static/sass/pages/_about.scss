@@ -1,4 +1,4 @@
-#about{
+#about {
   #experience .job {
     padding : 20px 0px;
     text-align : center;
@@ -13,6 +13,14 @@
 
     .dates {
       color : #999;
+    }
+
+    @media(max-width : $device_md){
+      margin : 0 0 40px 0;
+
+      &:last-of-type {
+        margin : 0;
+      }
     }
   }
 }

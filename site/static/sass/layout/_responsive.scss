@@ -1,4 +1,10 @@
+/* Follow Responsiveness via Gracefull Degradation */
+
 @import "../abstracts/variables";
+
+@media(max-width : $device_lg){
+
+}
 
 @media(max-width : $device_md) {
   body > .wrapper {
