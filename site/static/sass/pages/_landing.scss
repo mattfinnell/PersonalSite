@@ -1,0 +1,253 @@
+$primary_color : #fffffd;
+$accent_color : #c4cccf;
+
+$background_image : url("../images/Ferry.jpg");
+
+$gradient_color_a : rgba(255, 165, 150, 0.25);
+$gradient_color_b : rgba(0, 228, 255, 0.20);
+
+$social_media_icon_opacity : 0.4;
+$social_media_icons : (
+  ('soundcloud', rgba(255, 85,    0, $social_media_icon_opacity)),
+  ('github',     rgba(0,   0,     0, $social_media_icon_opacity)),
+  ('linkedin',   rgba(0,   155, 177, $social_media_icon_opacity)),
+  ('envelope-o', rgba(255, 68,   68, $social_media_icon_opacity)),
+  ('instagram',  rgba(255, 116, 150, $social_media_icon_opacity))
+);
+
+@function _full_shadow($size, $color) {
+  @return $size 0 0 $color, -$size 0 0 $color, 0 $size 0 $color, 0 (-$size) 0 $color;
+}
+
+@mixin icon_size_parent($size) {
+    height : $size;
+    width : $size;
+    line-height : $size;
+    text-indent : $size;
+}
+
+@mixin icon_size_child($size) {
+  font-size : $size / 2.0;
+}
+
+.icons li a {
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
+  text-indent: 3em;
+  border-color: #c4cccf;
+  display: inline-block;
+  border-radius: 100%;
+  border: solid 1px #c4cccf;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.icons li a:before {
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  text-indent: 3px;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+  text-shadow: _full_shadow(1.25px, $accent_color);
+  color: #fffffd;
+  font-family: FontAwesome;
+}
+
+.icons li {
+  padding: 0.675em 0.5em;
+}
+
+body#landing {
+  background-image: url("../images/overlay.png"), linear-gradient(60deg, $gradient_color_a 5%, $gradient_color_b), $background_image;
+  background-repeat : repeat, no-repeat, no-repeat;
+  background-attachment : fixed, fixed, fixed;
+  background-position : top left, center center, bottom center;
+  background-size : 100px 100px, cover, cover;
+
+  font-family : "Source Sans Pro";
+  font-size : 11pt;
+  line-height : 1.5;
+
+  @media (max-width : 460px) {
+    padding : 0;
+    width : 100%;
+  }
+}
+
+#landing {
+  h1, h2, h3, h4, h5, h6, p, span, ul, ol, li {
+    font-weight : 200;
+  }
+
+  h1 {
+    font-size : 1.85em;
+    margin : 0 0 14px 0;
+  }
+
+  h2 {
+    font-size : 1.25em;
+    margin : 0 0 13px 0;
+  }
+
+  section#main p {
+      margin : 0 0 20px 0;
+  }
+
+  #wrapper {
+    display : flex;
+    padding : 1.5em;
+    height : calc(100% - 3em);
+
+    text-transform : uppercase;
+    letter-spacing : 0.2em;
+
+    /* For centering the content */
+    // position : relative;
+
+    justify-content : center;
+    align-items : center;
+    flex-direction : column;
+  }
+
+  section#main {
+    min-width : 320px;
+    max-width : 100%;
+    background-color : $primary_color;
+    text-align : center;
+    padding : 4.5em 3em;
+    border-radius : 4px;
+    opacity : 0.925;
+  }
+
+  .avatar {
+    position : relative;
+    display : block;
+    margin-bottom : 1.5em;
+  }
+
+  .avatar:before {
+    content : '';
+    display : block;
+    position : absolute;
+    top : 50%;
+    left : -3em;
+    width : calc(100% + 6em);
+    height : 1px;
+    z-index : -1;
+    background : $accent_color;
+  }
+
+  .avatar img {
+    border-radius : 100%;
+    box-shadow : 0 0 0 1.5em $primary_color;
+    height : 122px;
+    width : 122px;
+  }
+
+  ul {
+    list-style : None;
+    margin : 0;
+    padding : 0;
+  }
+
+  ul.icons li {
+    display : inline;
+    font-family : font-awesome;
+  }
+
+  footer {
+    padding : 0px;
+  }
+
+  div#wrapper > footer {
+    color : $primary_color;
+    font-size : 0.9em;
+    margin : 20px;
+  }
+
+  @media handheld {
+    @each $platform, $color in $social_media_icons {
+      .icons .fa-#{$platform} {
+        border-color : $color;
+      }
+
+      .icons .fa-#{$platform}:before {
+        text-shadow : _full_shadow(1.25px, $color);
+      }
+    }
+  }
+
+  @media (max-height : 540px) and (min-aspect-ratio : 4/3), handheld and  (orientation : landscape) {
+    section#main > * {
+      margin : 0 30px 0 0;
+    }
+
+    section#main > footer {
+      margin : 0;
+    }
+
+    /* display card across a row instead of as a column*/
+    section#main {
+      display : flex;
+      align-items : center;
+      text-align : left;
+      padding : 3em;
+    }
+
+    /* Clear the Pinstripe on the avatar */
+    .avatar:before {
+      display : none;
+      margin-right : 20px;
+    }
+
+    /* Clear the outer shadow border on the avatar */
+    .avatar img {
+      box-shadow : 0 0 0 0 #fff;
+    }
+
+    section#main ul.icons li {
+      display : block;
+      padding : 0;
+    }
+
+    section#main ul.icons li a {
+      @include icon_size_parent(2.25em);
+    }
+
+    section#main ul.icons li a:before {
+      @include icon_size_child(2.25em);
+    }
+  }
+
+  @media (max-width : 460px) {
+    div#wrapper {
+      padding : 0;
+      width : 100%;
+    }
+
+    section#main {
+      margin  : 40px 0 0 0;
+      padding : 25px 0 20px 0;
+      width : 100%;
+    }
+
+    section#main .avatar:before {
+      width : calc(100% + 3em);
+    }
+
+    section#main ul.icons li a {
+      @include icon_size_parent(2.25em);
+    }
+
+    section#main ul.icons li a:before {
+      @include icon_size_child(2.25em);
+    }
+  }
+}

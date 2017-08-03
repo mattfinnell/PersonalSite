@@ -1,11 +1,26 @@
-{% extends "master.html" %} 
+{% extends "master.html" %}
 
 {% block title %} Welcome {% endblock %}
+
+{% block css %}
+  <style>
+    /* Vertically Centers the content. This causes conflict with styles on other pages */
+    html, body, #wrapper {
+      height : 100%;
+      margin : 0;
+      padding : 0;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <!--[if lte IE 9]><link rel="stylesheet" href="/css/landing-ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/css/landing-ie8.css" /><![endif]-->
+{% endblock %}
 
 {% block body_id %}landing{% endblock %}
 {% block body_clases %}is-loading{% endblock %}
 
-{% block content %} 
+{% block content %}
 	<!-- Wrapper -->
 	<div id="wrapper">
 

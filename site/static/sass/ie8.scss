@@ -1,11 +1,76 @@
 /*
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+  Stellar by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
 
-/* List */
-ul {
+/* Type */
+body {
+  color: _palette(fg-bold);
+}
+
+/* Button */
+.button {
+  position: relative;
+  border: solid 1px !important;
+
+  &.special {
+    border: none !important;
+  }
+}
+
+/* Icon */
+.icon {
+  &.major {
+    -ms-behavior: url('assets/js/ie/PIE.htc');
+
+    &:before {
+      font-size: 4em;
+      border: 0;
+    }
+  }
+}
+
+/* Spotlight */
+.spotlight {
+  .image {
+    position: relative;
+    -ms-behavior: url('assets/js/ie/PIE.htc');
+
+    img {
+      position: relative;
+      -ms-behavior: url('assets/js/ie/PIE.htc');
+    }
+  }
+}
+
+/* Features */
+.features {
+  li {
+    width: 29%;
+  }
+}
+
+/* Footer */
+#footer {
+  > * {
+    width: 50%;
+    margin-left: 0;
+  }
+}
+
+/* Main */
+#main {
+  > .main {
+    > .image.main:first-child {
+      margin-top: 0;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+#landing ul {
   &.icons {
     li {
       a {
@@ -21,7 +86,7 @@ ul {
 }
 
 /* Main */
-#main {
+#landing #main {
   -ms-behavior: url('assets/js/PIE.htc');
 
   .avatar {
@@ -32,7 +97,7 @@ ul {
 }
 
 /* Footer */
-#footer {
+#landing #footer {
   color: #fff;
 
   .copyright {

@@ -2,7 +2,7 @@
 <!--
 	THEME AND TEMPLATE INFORMATION
 
-	Identity by HTML5 UP
+	Stellar (main) and Identity (Single Pagers) by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -22,10 +22,6 @@
 		{% endif %}
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-    <!--<link rel="stylesheet" href="/static/css/theme.css"/>-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
-    <link rel="stylesheet" href="/static/css/style.css"/>
 		{% block css %}{% endblock %}
 
 		{% if config.GOOGLE_ANALYTICS %}
@@ -42,26 +38,10 @@
 			</script>
 		{% endif %}
 
-		<!-- Damn schitzophrenic security engineers -->
 		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
 	</head>
-	<body id="{% block body_id %}{%endblock%}" class="{% block body_classes %}{% endblock%}">
-		{% block nav %} {% endblock %}
-		{% block header %} {% endblock %}
-		{% block content %} {% endblock %}
-		{% block footer %} {% endblock %}
-
-    {% if config.DEVELOPMENT %}
-      <script type="text/javascript" src="/static/development/jquery-3.2.1.min.js"></script>
-      <!--<script type="text/javascript" src="/static/development/bootstrap-3.3.7/js/bootstrap.min.js"></script>-->
-		{% else %}
-      <script type="text/javascript" crossorigin="anonymous" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" ></script>
-      <!--<script type="text/javascript" crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>-->
-		{% endif %}
-
-		<script type="text/javascript" src="/static/js/utils.js"></script>
-		<script type="text/javascript" src="/static/js/script.js"></script>
-
-		{% block js %} {% endblock %}
+	<body id="{% block body_id %}{% endblock %}" class="{% block body_classes %}{% endblock%}">
+    {% block content %}{% endblock %}
+    {% block js %}{% endblock %}
 	</body>
 </html>

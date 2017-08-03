@@ -1,0 +1,119 @@
+@import '../abstracts/variables';
+
+$_default_smb_color : #333;
+$_default_smb_line_weight : 1.25px;
+$_default_smb_size : 48px;
+
+$social_media_buttons : (
+  ('soundcloud', rgba(255, 85,    0, $social_media_button_opacity)),
+  ('github',     rgba(0,   0,     0, $social_media_button_opacity)),
+  ('linkedin',   rgba(0,   155, 177, $social_media_button_opacity)),
+  ('envelope-o', rgba(255, 68,   68, $social_media_button_opacity)),
+  ('instagram',  rgba(255, 116, 150, $social_media_button_opacity))
+);
+
+@mixin _full_shadow($size, $color) {
+  text-shadow : $size 0 0 $color, -$size 0 0 $color, 0 $size 0 $color, 0 (-$size) 0 $color;
+}
+
+@mixin _button_size_parent($size) {
+    height : $size;
+    width : $size;
+    line-height : $size;
+    text-indent : $size;
+}
+
+@mixin _button_size_child($size) {
+  font-size : $size / 2.0;
+}
+
+ul.social-media-buttons {
+  list-style : None;
+  padding : 10px 0;
+
+  li {
+    display: inline;
+    font-family : font-awesome;
+    margin : 5px;
+  }
+
+  li a {
+    border-radius: 100%;
+    display : inline-block;
+    border-radius : 100%;
+    overflow : hidden;
+    text-align : center;
+    position : relative;
+
+    @include _button_size_parent($_default_smb_size);
+    border : solid (0.8 * $_default_smb_line_weight) $_default_smb_color;
+  }
+
+  li a:before {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : inherit;
+    text-indent : -1px;
+    -moz-osx-font-smoothing : grayscale;
+    font-style : normal;
+    font-weight : normal;
+    text-transform : none !important;
+    font-family : FontAwesome;
+
+    @include _button_size_child($_default_smb_size);
+    @include _full_shadow($_default_smb_line_weight, $_default_smb_color);
+    color : white;
+  }
+
+  @each $platform, $color in $social_media_buttons {
+    .fa-#{$platform}:hover {
+      border-color : $color;
+    }
+
+    .fa-#{$platform}:hover:before {
+      @include _full_shadow($_default_smb_line_weight, $color);
+    }
+  }
+
+  @media handheld {
+    @each $platform, $color in $social_media_buttons {
+      .fa-#{$platform} {
+        border-color : $color;
+      }
+
+      .fa-#{$platform}:before {
+        @include _full_shadow($_default_smb_line_weight, $color);
+      }
+    }
+  }
+}
+
+@mixin social_media_buttons($button_size, $button_line_weight, $button_color, $button_background_color) {
+  ul.social-media-buttons {
+    li a {
+      @include _button_size_parent($button_size);
+      border : solid (0.8 * $button_line_weight) $button_color;
+    }
+
+    li a:before {
+      @include _button_size_child($button_size);
+      @include _full_shadow($button_line_weight, $button_color);
+      color : $button_background_color;
+    }
+
+    @each $platform, $color in $social_media_buttons {
+      .fa-#{$platform}:hover:before {
+        @include _full_shadow($button_line_weight, $color);
+      }
+    }
+
+    @media handheld {
+      @each $platform, $color in $social_media_buttons{
+        .fa-#{$platform}:before {
+          @include _full_shadow($button_line_weight, $color);
+        }
+      }
+    }
+  }
+}

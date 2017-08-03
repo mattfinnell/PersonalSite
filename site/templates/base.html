@@ -1,11 +1,37 @@
 {% extends "master.html" %}
 
-<!-- Force footer and navigation compotnents into all pages -->
-{% block footer %} {% include "footer.html" %} {% endblock %}
-{% block nav %} {% include "nav.html" %} {% endblock %}
+{% block title %}{% endblock %}
+{% block content %}
+  <div class="wrapper">
+    {% block header %}{% endblock %}
+    {% block nav %}{%endblock%}
+    {% block body %}{% endblock %}
+    {% include "footer.html" %}
+  </div>
+{% endblock %}
 
-{% block title %} {% endblock %}
-{% block header %} {% endblock %} 
-{% block content %} {% endblock %} 
-{% block css %} {% endblock %}
-{% block js %} {% endblock %}
+{% block css %}
+  {% if config.DEVELOPMENT %}
+    <link rel="stylesheet" href="/static/development/bootstrap-3.3.7/css/bootstrap.min.css"/>
+  {% else %}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  {% endif %}
+
+  <link rel="stylesheet" href="/static/css/style.css"/>
+{% endblock %}
+
+{% block js %}
+  {% if config.DEVELOPMENT %}
+    <script type="text/javascript" src="/static/development/jquery-3.2.1.min.js"></script>
+  {% else %}
+    <script type="text/javascript" crossorigin="anonymous" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" ></script>
+  {% endif %}
+
+  <!-- Scripts -->
+  <script src="/static/js/jquery.scrollex.min.js"></script>
+  <script src="/static/js/jquery.scrolly.min.js"></script>
+  <script src="/static/js/skel.min.js"></script>
+  <script src="/static/js/util.js"></script>
+  <!--[if lte IE 8]><script src="/static/js/ie/respond.min.js"></script><![endif]-->
+  <script src="/static/js/main.js"></script>
+{% endblock %}

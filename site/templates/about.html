@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+{% block body_id %}about{% endblock %}
+
+{% block header %}
+<!-- Header -->
+<header id="header" class="alt">
+  <span class="logo"><img src="/static/images/BakerBankedSlalom.jpg" alt="" /></span>
+  <h1>Matt Finnell</h1>
+  <p>Seattle Based Developer</p>
+</header>
+{% endblock %}
+
+{% block nav %}
+<!-- Nav -->
+<nav id="nav">
+  <ul>
+    <li><a href="#bio" class="active">Bio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block body %}
+<section id="content">
+  <section id="bio">
+    <header class="major">
+      <h2>Bio</h2>
+    </header>
+    <p>My name is Matt. I am from Bellingham but now live in Seattle. I studied Computer Science at Western Washington University which is where I discovered my interest for Artificial Intelligence, Machine Learning and deeper Mathematics.</p>
+    <p>I primarily made this site as a flexible way to get my projects out of the dark cave that is my sandbox folder. If you would like to see how I made this site, then check out my <a href="#">writeup</a>.</p>
+  </section>
+  <section id="experience">
+    <header class="major">
+      <h2>Where I've worked</h2>
+    </header>
+    <div class="row">
+      <div class="job col-md-4">
+        <a href="http://www.spie.org/"><img src="/static/images/spie.png" alt=""></a>
+        <div class="details">
+          <span>Software Development Engineering Intern</span>
+          <span class="dates">June 2015 to June 2016</span>
+        </div>
+      </div>
+      <div class="job col-md-4">
+        <a href="http://www.tagnw.org"><img src="http://www.tagnw.org/wp-content/uploads/2016/07/tag_logo_header_color.png" alt=""></a>
+        <div class="details">
+          <span>Volunteer Developer</span>
+          <span class="dates">January 2015 to December 2015</span>
+        </div>
+      </div>
+      <div class="job col-md-4">
+        <a href="http://preparedresponse.com/"><img src="http://preparedresponse.com/images/PR_logo.png" alt=""></a>
+        <div class="details">
+          <span>Front End Web Development Intern</span>
+          <span class="dates">June 2014 to January 2015</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <header class="major">
+      <h2>Skills</h2>
+    </header>
+    <div class="skills container-fluid">
+      <div class="row">
+        <div class="skill col-md-6">
+          <span>Python</span>
+          <div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div></div>
+        </div>
+        <div class="skill col-md-6">
+          <span>HTML</span>
+          <div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="resume">
+    <header class="major">
+      <h2>Resume</h2>
+    </header>
+    <a href="/static/resources/Resume-MattFinnell.pdf">Developer Resume</a>
+    <a href="card.mattfinnell.io">Business Card</a>
+  </section>
+</section>
+{% endblock %}
