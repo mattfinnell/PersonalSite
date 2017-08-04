@@ -7,7 +7,7 @@ def _clear_directory(dir_path) :
     if os.path.isdir(os.getcwd() + dir_path) :
             shutil.rmtree(os.getcwd() + dir_path)
 
-def compile_sass(env) :
+def compile_dependencies(env) :
 
     _clear_directory("/static/css")
 
