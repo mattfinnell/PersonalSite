@@ -1,6 +1,7 @@
 /* Follow Responsiveness via Gracefull Degradation */
 
 @import "../abstracts/variables";
+@import "../abstracts/mixins";
 
 @media(max-width : $device_lg){
 
@@ -8,7 +9,7 @@
 
 @media(max-width : $device_md) {
   body > .wrapper {
-    padding : 2em;
+    @include padding($wrapper_top_gutter, $wrapper_md_side_gutter);
   }
 }
 
@@ -20,11 +21,16 @@
 
 @media(max-width : $device_xs) {
   body > .wrapper {
-    padding : 2em 0em;
+    @include padding($wrapper_top_gutter, $wrapper_sm_side_gutter);
   }
 
   body > .wrapper > footer,
   body section#content > section {
     padding : 3em 1em 2em 1em;
+  }
+
+
+  nav {
+    display : None;
   }
 }

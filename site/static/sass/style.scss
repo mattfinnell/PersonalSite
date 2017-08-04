@@ -11,7 +11,9 @@
 
 @import "layout/header";
 @import "layout/footer";
+@import "layout/nav";
 
 @import "pages/about";
 @import "pages/landing";
-@import "layout/responsive";
+
+@import "base/responsive";

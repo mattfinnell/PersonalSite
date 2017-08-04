@@ -12,12 +12,22 @@ body {
   @include background-image(linear-gradient(45deg, $background_color_primary 15%, $background_color_secondary 85%));
 
   .wrapper {
-    padding : 5em 5em 3em 5em;
+    @include padding($wrapper_top_gutter, $wrapper_lg_side_gutter);
   }
 
   section#content section,
-  footer {
+  > .wrapper > footer {
     padding : 3em 2em;
+  }
+
+  section#content section:first-of-type {
+    padding : (3em + 3em) 2em 3em 2em;
+  }
+
+  @media (max-width : $device-xs) {
+    section#content section:first-of-type {
+      padding : 3em  2em;
+    }
   }
 
   section#content {

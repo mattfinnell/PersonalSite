@@ -1,0 +1,8 @@
+@mixin padding($tb, $lr: null) {
+  @if ($lr) {
+    padding : $tb $lr;
+
+  } @else {
+    padding : $tb $tb;
+  }
+}

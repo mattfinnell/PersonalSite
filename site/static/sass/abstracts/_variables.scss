@@ -1,12 +1,20 @@
-$primary_color : #fffffd;
-$accent_color : #c4cccf;
+$text_color : #636363;
+
+//$primary_color : #fffffd;
+//$accent_color : #c4cccf;
 $social_media_button_opacity : 0.4;
 
-$text_color : #636363;
 $background_image : "../images/Ferry.jpg";
 $background_color : #88bbd6;
 $background_color_primary : #cdcdcd;
 $background_color_secondary : #99d3df;
+
+$wrapper_top_gutter : 5em;
+$wrapper_lg_side_gutter : 5em;
+$wrapper_md_side_gutter : 2em;
+$wrapper_sm_side_gutter : 0em;
+
+$nav_color : #f7f7f7;
 
 $device_xs : 479px;
 $device_sm : 767px;

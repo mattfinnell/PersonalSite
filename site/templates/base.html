@@ -4,8 +4,14 @@
 {% block content %}
   <div class="wrapper">
     {% block header %}{% endblock %}
-    {% block nav %}{%endblock%}
-    {% block body %}{% endblock %}
+    <nav>
+      <ul class="center-block">
+        {% block nav %}{%endblock%}
+      </ul>
+    </nav>
+    <section id="content">
+      {% block body %}{% endblock %}
+    </section>
     {% include "footer.html" %}
   </div>
 {% endblock %}
@@ -28,10 +34,11 @@
   {% endif %}
 
   <!-- Scripts -->
-  <script src="/static/js/jquery.scrollex.min.js"></script>
-  <script src="/static/js/jquery.scrolly.min.js"></script>
-  <script src="/static/js/skel.min.js"></script>
-  <script src="/static/js/util.js"></script>
-  <!--[if lte IE 8]><script src="/static/js/ie/respond.min.js"></script><![endif]-->
-  <script src="/static/js/main.js"></script>
+  <!--<script src="/static/js/jquery.scrollex.min.js"></script>-->
+  <!--<script src="/static/js/jquery.scrolly.min.js"></script>-->
+  <!--<script src="/static/js/skel.min.js"></script>-->
+  <!--<script src="/static/js/util.js"></script>-->
+  <!--[>[if lte IE 8]><script src="/static/js/ie/respond.min.js"></script><![endif]<]-->
+  <!--<script src="/static/js/main.js"></script>-->
+  <script src="/static/js/script.js"></script>
 {% endblock %}
