@@ -29,7 +29,7 @@ def jinja_addons() :
 
 @app.before_request
 def before_request_handler() :
-    if app.config["Development"] :
+    if app.config["DEVELOPMENT"] :
         utils.compile_dependencies(app.config)
 
 if __name__ == "__main__" :
