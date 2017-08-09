@@ -4,12 +4,13 @@
 
 body {
   font-family : "Source Sans Pro";
-  font-size : 16pt;
+  font-size : 14pt;
   color : $text_color;
 }
 
-a {
-  color : $text_color;
+a, a:link, a:visited, a:active {
+ text-decoration : none;
+ color : $text_color;
 }
 
 .major {
