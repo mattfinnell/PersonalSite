@@ -7,12 +7,12 @@ def _clear_directory(dir_path) :
     if os.path.isdir(os.getcwd() + dir_path) :
             shutil.rmtree(os.getcwd() + dir_path)
 
-def compile_dependencies(env) :
+def compile_dependencies(conf) :
 
     _clear_directory("/static/css")
 
     sass.compile(
-        dirname = (env["SASS_DIR"], env["CSS_DIR"]),
-        output_style = env["SASS_OUTPUT_STYLE"],
-        source_comments = env["SASS_OUTPUT_COMMENTS"]
+        dirname = (conf["SASS_DIR"], conf["CSS_DIR"]),
+        output_style = conf["SASS_OUTPUT_STYLE"],
+        source_comments = conf["SASS_OUTPUT_COMMENTS"]
     )
