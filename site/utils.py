@@ -1,18 +1,31 @@
-import config
+from flask_assets import Bundle
+from glob import glob
 import shutil
-import sass
 import os
 
-def _clear_directory(dir_path) :
-    if os.path.isdir(os.getcwd() + dir_path) :
-            shutil.rmtree(os.getcwd() + dir_path)
+def compile_assets(assets) :
 
-def compile_dependencies(conf) :
+    _clear_directory(assets.directory, "css")
 
-    _clear_directory("/static/css")
+    file_names = [f[f.rindex("/") + 1:f.index(".")] for f in glob("static/sass/*.scss")]
 
-    sass.compile(
-        dirname = (conf["SASS_DIR"], conf["CSS_DIR"]),
-        output_style = conf["SASS_OUTPUT_STYLE"],
-        source_comments = conf["SASS_OUTPUT_COMMENTS"]
-    )
+    scss_files = [os.path.join("sass", f + ".scss") for f in file_names]
+    css_files  = [os.path.join("css", f + ".css")   for f in file_names]
+
+    for file_name, scss_file, css_file in zip(file_names, scss_files, css_files):
+        css_bundle = Bundle(
+            Bundle(scss_file, filters="libsass", output=css_file),
+            filters="autoprefixer",
+            output=css_file
+        )
+
+        assets.register("assets_css_" + file_name, css_bundle)
+
+    return assets
+
+def _clear_directory(current_path, dir_path) :
+    path = os.path.join(current_path, dir_path)
+    if os.path.isdir(path) :
+        shutil.rmtree(path)
+
+    os.makedirs(path)

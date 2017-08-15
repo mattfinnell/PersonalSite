@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
-@import "../libs/bourbon/bourbon";
 @import "../abstracts/variables";
 
 body {
@@ -21,7 +20,7 @@ a, a:link, a:visited, a:active {
   }
 
   h2:after {
-    @include background-image(linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0));
+    background-image : linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 
     font-size : 2em;
 

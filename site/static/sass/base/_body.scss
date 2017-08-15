@@ -1,5 +1,5 @@
-@import "../libs/bourbon/bourbon";
 @import "../abstracts/variables";
+@import "../abstracts/_mixins.scss";
 
 html, 
 body, 
@@ -9,7 +9,7 @@ body,
 }
 
 body {
-  @include background-image(linear-gradient(45deg, $background_color_primary 15%, $background_color_secondary 85%));
+  background-image : linear-gradient(45deg, $background_color_primary 15%, $background_color_secondary 85%);
 
   .wrapper {
     @include padding($wrapper_top_gutter, $wrapper_lg_side_gutter);

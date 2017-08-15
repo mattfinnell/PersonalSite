@@ -37,7 +37,8 @@
 		{% endif %}
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-    <link href="/static/css/style.css" rel="stylesheet">
+
+    {% assets "assets_css_style" %}<link rel="stylesheet" href="{{ ASSET_URL }}">{% endassets %}
     {% block css %}{% endblock %}
 
 		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>

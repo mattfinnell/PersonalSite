@@ -23,6 +23,9 @@ site/static/development/
 # Will be compiling sass instead of using dry css
 site/static/css/*
 
+# Don't track the black hole that is the node modules. 
+site/node_modules/
+
 #      ____       ____            ____     ____                                
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
 #    / / / / _ \/ /_/ __ `/ / / / / __/   / // __ `/ __ \/ __ \/ ___/ _ \/ ___/
