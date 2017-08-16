@@ -35,17 +35,19 @@ def create_app(config_object) :
 
 app = create_app(config.Config)
 
-@app.route("/")
-def index() :
-    return render_template("index.html")
+def render(template_name_or_list, **context) :
+    if app.config["DEVELOPMENT"] :
+        utils.compile_assets(app.config["ASSETS"])
+
+    return render_template(template_name_or_list, **context)
 
 @app.route("/landing")
 def landing() :
-    return render_template("landing.html")
+    return render("landing.html")
 
+@app.route("/")
 @app.route("/about/")
 def about() :
-    assets = utils.compile_assets(app.config["ASSETS"])
     data = {
         "skills" : [
             ("Python", 80),
@@ -55,7 +57,7 @@ def about() :
             ("Jinja", 50),
         ]
     }
-    return render_template("about.html", data=data)
+    return render("about.html", data=data)
 
 @app.context_processor
 def jinja_addons() :
