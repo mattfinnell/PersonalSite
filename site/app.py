@@ -12,7 +12,6 @@ def create_app(config_object) :
     app = Flask(config_object.APP_NAME)
     app.config.from_object(os.environ['APP_SETTINGS'])
 
-
     # Configure Flask Assets
     assets = Environment(app)
     assets.debug       = app.config["DEVELOPMENT"]
@@ -22,7 +21,7 @@ def create_app(config_object) :
     assets.manifest    = None
 
     assets.config["AUTOPREFIXER_BIN"] = os.path.join(app.root_path, "node_modules", "postcss-cli", "bin", "postcss")
-    assets.config["LIBSASS_STYLE"] = "compressed"
+    assets.config["LIBSASS_STYLE"] = app.config["SASS_OUTPUT_STYLE"]
 
     assets = utils.compile_assets(assets)
 
@@ -42,6 +41,7 @@ def landing() :
 
 @app.route("/about/")
 def about() :
+    assets = utils.compile_assets(app.config["ASSETS"])
     return render_template("about.html")
 
 @app.context_processor

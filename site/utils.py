@@ -13,13 +13,16 @@ def compile_assets(assets) :
     css_files  = [os.path.join("css", f + ".css")   for f in file_names]
 
     for file_name, scss_file, css_file in zip(file_names, scss_files, css_files):
-        css_bundle = Bundle(
+        bundle_css = Bundle(
             Bundle(scss_file, filters="libsass", output=css_file),
-            filters="autoprefixer",
+            filters="autoprefixer6",
             output=css_file
         )
 
-        assets.register("assets_css_" + file_name, css_bundle)
+        # Register asset bundle if it doesn't already exist.
+        bundle_name_css = "assets_css_" + file_name
+        if bundle_name_css not in assets._named_bundles :
+            assets.register(bundle_name_css, bundle_css)
 
     return assets
 
