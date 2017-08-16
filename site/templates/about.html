@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 
+{% macro skill(skill_data, offset=none) %}
+  {% set name = skill_data[0] %}
+  {% set percentage = skill_data[1] %}
+
+  {% if percentage > 60 %}
+    {% set color = "progress-bar-success "%}
+  {% else %}
+    {% set color = "progress-bar-info"%}
+  {% endif %}
+
+  {% if offset %}
+    {% set offset = "col-sm-offset-3" %}
+  {% else %}
+    {% set offset = "" %}
+  {% endif %}
+
+  <div class="skill col-sm-6 {{offset}}">
+    <span>{{name}}</span>
+    <div class="progress"><div class="progress-bar {{color}} progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%"></div></div>
+  </div>
+{% endmacro %}
+
 {% block title %}About{% endblock %}
 {% block body_id %}about{% endblock %}
 
@@ -59,16 +81,29 @@
     <h2>Skills</h2>
   </header>
   <div class="skills container-fluid">
-    <div class="row">
-      <div class="skill col-md-6">
-        <span>Python</span>
-        <div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div></div>
+    {% set lastitem = none %}
+    {% if data.skills | length is divisibleby 2 %}
+      {% set skills = data.skills %}
+    {% else %}
+      {% set skills = data.skills[:-1] %}
+      {% set lastitem = data.skills[-1] %}
+    {% endif %}
+
+
+    {% for s in skills %}
+      {% if not loop.index is divisibleby 2 %}
+        <div class="row">
+      {% endif %}
+        {{skill(s)}}
+      {% if loop.index is divisibleby 2 %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if not lastitem is none %}
+      <div class="row">
+        {{skill(lastitem, offset=True)}}
       </div>
-      <div class="skill col-md-6">
-        <span>HTML</span>
-        <div class="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div></div>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 <section id="resume">

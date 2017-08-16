@@ -12,13 +12,17 @@ def create_app(config_object) :
     app = Flask(config_object.APP_NAME)
     app.config.from_object(os.environ['APP_SETTINGS'])
 
+    dev_config = app.config["DEVELOPMENT"]
+
     # Configure Flask Assets
     assets = Environment(app)
-    assets.debug       = app.config["DEVELOPMENT"]
-    assets.auto_build  = app.config["DEVELOPMENT"]
+    assets.debug       = dev_config
+    assets.auto_build  = dev_config
     assets.cache       = False
-    assets.url_mapping = False
-    assets.manifest    = None
+    assets.url_mapping = not app.config["PRODUCTION"]
+
+    if dev_config :
+        assets.manifest = None
 
     assets.config["AUTOPREFIXER_BIN"] = os.path.join(app.root_path, "node_modules", "postcss-cli", "bin", "postcss")
     assets.config["LIBSASS_STYLE"] = app.config["SASS_OUTPUT_STYLE"]
@@ -42,7 +46,16 @@ def landing() :
 @app.route("/about/")
 def about() :
     assets = utils.compile_assets(app.config["ASSETS"])
-    return render_template("about.html")
+    data = {
+        "skills" : [
+            ("Python", 80),
+            ("HTML", 80),
+            ("CSS", 70),
+            ("JavaScript", 50),
+            ("Jinja", 50),
+        ]
+    }
+    return render_template("about.html", data=data)
 
 @app.context_processor
 def jinja_addons() :
