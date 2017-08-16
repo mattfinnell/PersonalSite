@@ -27,6 +27,24 @@ $social_media_buttons : (
   font-size : $size / 2.0;
 }
 
+a.button {
+  display : inline-block;
+  height : 2.75em;
+  line-height : 2.75em;
+  min-width : 9.25em;
+  padding : 0 1.5em;
+  margin : 0;
+  text-align : center;
+  color : $text_color;
+  border : solid 1px $text_color;
+  border-radius : 8px;
+
+  * {
+    margin : 0;
+    line-height : inherit;
+  }
+}
+
 ul.social-media-buttons {
   list-style : None;
   padding : 10px 0;

@@ -37,22 +37,6 @@ body > .wrapper > footer {
     list-style : none;
     margin : 0;
     padding : 0;
-
-    li {
-      border : solid 1px $text_color;
-      border-radius : 8px;
-      display : inline-block;
-    }
-
-    a.button {
-      display : inline-block;
-      height : 2.75em;
-      line-height : 2.75em;
-      min-width : 9.25em;
-      padding : 0 1.5em;
-      text-align : center;
-      color : $text_color;
-    }
   }
 
   #builtwith {
