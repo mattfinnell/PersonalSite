@@ -44,6 +44,6 @@ def get_classes_of_type(module, class_type):
 
 def render(template_name_or_list, **context) :
     if current_app.config["DEVELOPMENT"] :
-        compile_assets(current_app.config["ASSETS"])
+        current_app.config["ASSETS"] = compile_assets(current_app.config["ASSETS"])
 
     return render_template(template_name_or_list, **context)

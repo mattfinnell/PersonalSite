@@ -2,7 +2,11 @@ from flask import Blueprint
 
 from utils import render
 
-site = Blueprint('site', __name__, template_folder="../templates")
+site = Blueprint(
+    'site',
+    __name__,
+    template_folder="../templates",
+)
 
 @site.route("/")
 @site.route("/about")
