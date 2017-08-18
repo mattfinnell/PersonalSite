@@ -1,3 +1,4 @@
+from flask import render_template, current_app
 from flask_assets import Bundle
 from glob import glob
 import shutil
@@ -32,3 +33,17 @@ def _clear_directory(current_path, dir_path) :
         shutil.rmtree(path)
 
     os.makedirs(path)
+
+def get_classes_of_type(module, class_type):
+    object_names = filter(
+        lambda x : issubclass(type(getattr(module, x)), class_type),
+        module.__dict__
+    )
+
+    return [getattr(module, object_name) for object_name in object_names]
+
+def render(template_name_or_list, **context) :
+    if current_app.config["DEVELOPMENT"] :
+        compile_assets(current_app.config["ASSETS"])
+
+    return render_template(template_name_or_list, **context)
