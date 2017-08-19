@@ -36,10 +36,8 @@ def register_assets(app) :
     assets.debug       = dev_config
     assets.auto_build  = dev_config
     assets.url_mapping = not app.config["PRODUCTION"]
-
-    if dev_config :
-        assets.manifest = None
-        assets.cache    = False
+    assets.manifest    = False
+    assets.cache       = False
 
     assets.config["AUTOPREFIXER_BIN"] = os.path.join(
         app.root_path,
