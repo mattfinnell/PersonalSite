@@ -33,9 +33,9 @@ def register_assets(app) :
 
     # Configure Flask Assets
     assets = Environment(app)
-    assets.debug       = dev_config
-    assets.auto_build  = dev_config
-    assets.url_mapping = not app.config["PRODUCTION"]
+    assets.debug       = True
+    assets.auto_build  = True
+    assets.url_mapping = True
     assets.manifest    = False
     assets.cache       = False
 

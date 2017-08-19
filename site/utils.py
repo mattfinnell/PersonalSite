@@ -43,7 +43,7 @@ def get_classes_of_type(module, class_type):
     return [getattr(module, object_name) for object_name in object_names]
 
 def render(template_name_or_list, **context) :
-    if current_app.config["DEVELOPMENT"] :
+    if current_app.config["DEVELOPMENT"] or current_app.config["STAGING"] :
         current_app.config["ASSETS"] = compile_assets(current_app.config["ASSETS"])
 
     return render_template(template_name_or_list, **context)
