@@ -30,6 +30,7 @@ class Config(object) :
     SASS_DIR = "static/sass/"
     CSS_DIR = "static/css/"
 
+
 class DevelopmentConfig(Config) :
     DEVELOPMENT = True
 
