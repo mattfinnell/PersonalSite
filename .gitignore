@@ -14,17 +14,11 @@
 # local virtual environment folder (python virtualenv)
 .site-env/
 
-# Theme folder that I use for quick reference for the template
-website
-
 # Folder for local copies of bootstrap, jquery, and other page resources
 website/static/development/
 
-# Will be compiling sass instead of using dry css
-website/static/css/
-
 # Don't track the black hole that is the node modules.
-website/node_modules/
+**/node_modules
 
 #      ____       ____            ____     ____
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
