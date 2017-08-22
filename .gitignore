@@ -17,6 +17,9 @@
 # Folder for local copies of bootstrap, jquery, and other page resources
 website/static/development/
 
+# Ignore the CSS folder since all css will be generated on the fly
+website/static/css
+
 # Don't track the black hole that is the node modules.
 **/node_modules
 
