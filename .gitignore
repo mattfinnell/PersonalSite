@@ -1,12 +1,12 @@
-#     ______           __                     ____                                
+#     ______           __                     ____
 #    / ____/_  _______/ /_____  ____ ___     /  _/___ _____  ____  ________  _____
 #   / /   / / / / ___/ __/ __ \/ __ `__ \    / // __ `/ __ \/ __ \/ ___/ _ \/ ___/
-#  / /___/ /_/ (__  ) /_/ /_/ / / / / / /  _/ // /_/ / / / / /_/ / /  /  __(__  ) 
-#  \____/\__,_/____/\__/\____/_/ /_/ /_/  /___/\__, /_/ /_/\____/_/   \___/____/  
-#                                             /____/                            
+#  / /___/ /_/ (__  ) /_/ /_/ / / / / / /  _/ // /_/ / / / / /_/ / /  /  __(__  )
+#  \____/\__,_/____/\__/\____/_/ /_/ /_/  /___/\__, /_/ /_/\____/_/   \___/____/
+#                                             /____/
 
 # Obnoxious DS_Store file that OSX uses
-.DS_store 
+.DS_store
 
 # "Art" Folder
 .ignore/
@@ -15,23 +15,23 @@
 .site-env/
 
 # Theme folder that I use for quick reference for the template
-site/theme/
+website
 
-# Folder for local copies of bootstrap, jquery, and other page resources 
-site/static/development/
+# Folder for local copies of bootstrap, jquery, and other page resources
+website/static/development/
 
 # Will be compiling sass instead of using dry css
-site/static/css/*
+website/static/css/
 
-# Don't track the black hole that is the node modules. 
-site/node_modules/
+# Don't track the black hole that is the node modules.
+website/node_modules/
 
-#      ____       ____            ____     ____                                
+#      ____       ____            ____     ____
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
 #    / / / / _ \/ /_/ __ `/ / / / / __/   / // __ `/ __ \/ __ \/ ___/ _ \/ ___/
-#   / /_/ /  __/ __/ /_/ / /_/ / / /_   _/ // /_/ / / / / /_/ / /  /  __(__  ) 
-#  /_____/\___/_/  \__,_/\__,_/_/\__/  /___/\__, /_/ /_/\____/_/   \___/____/  
-#                                          /____/                              
+#   / /_/ /  __/ __/ /_/ / /_/ / / /_   _/ // /_/ / / / / /_/ / /  /  __(__  )
+#  /_____/\___/_/  \__,_/\__,_/_/\__/  /___/\__, /_/ /_/\____/_/   \___/____/
+#                                          /____/
 #
 #				Created by https://www.gitignore.io/api/python
 

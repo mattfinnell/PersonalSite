@@ -6,9 +6,7 @@ import os
 
 def compile_assets(assets) :
 
-    _clear_directory(assets.directory, "css")
-
-    file_names = [f[f.rindex("/") + 1:f.index(".")] for f in glob("static/sass/*.scss")]
+    file_names = [f[f.rindex("/") + 1:f.index(".")] for f in glob("website/static/sass/*.scss")]
 
     scss_files = [os.path.join("sass", f + ".scss") for f in file_names]
     css_files  = [os.path.join("css", f + ".css")   for f in file_names]
@@ -26,13 +24,6 @@ def compile_assets(assets) :
             assets.register(bundle_name_css, bundle_css)
 
     return assets
-
-def _clear_directory(current_path, dir_path) :
-    path = os.path.join(current_path, dir_path)
-    if os.path.isdir(path) :
-        shutil.rmtree(path)
-
-    os.makedirs(path)
 
 def get_classes_of_type(module, class_type):
     object_names = filter(

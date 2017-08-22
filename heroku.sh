@@ -1,5 +1,5 @@
 # Run site
-cd site
+cd website
 
 npm install postcss-cli
 npm install autoprefixer

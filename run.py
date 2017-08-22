@@ -3,4 +3,3 @@ from website.config import DevelopmentConfig
 
 app = create_app(DevelopmentConfig)
 app.run()
-

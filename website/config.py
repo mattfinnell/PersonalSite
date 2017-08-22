@@ -13,6 +13,7 @@ class Config(object) :
     # Typical meta-variables
     APP_NAME = "__mattfinnell_dot_io_website__"
     CSRF_ENABLED = True
+    STATIC_FOLDER = "website/static"
 
     # Quick identifiers
     STAGING = False
@@ -27,9 +28,6 @@ class Config(object) :
     # LIB-SASS compilation options
     SASS_OUTPUT_STYLE = "expanded"
     SASS_OUTPUT_COMMENTS = True
-    SASS_DIR = "website/static/sass/"
-    CSS_DIR = "website/static/css/"
-
 
 class DevelopmentConfig(Config) :
     DEVELOPMENT = True

@@ -15,6 +15,7 @@ import os
 def create_app(config_object) :
     app = Flask(config_object.APP_NAME)
     app.config.from_object(config_object)
+    app.static_folder = config_object.STATIC_FOLDER
 
     registration_functions = [
         register_assets,
@@ -40,6 +41,7 @@ def register_assets(app) :
 
     assets.config["AUTOPREFIXER_BIN"] = os.path.join(
         app.root_path,
+        "website",
         "node_modules",
         "postcss-cli",
         "bin",
