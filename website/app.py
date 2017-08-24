@@ -15,14 +15,14 @@ from flask_admin.contrib.sqla import ModelView
 # Werkzeug utilities
 from werkzeug.utils import find_modules, import_string
 
+# standard library utilities
+from datetime import datetime
+import os
+
 # local application modules
 from website.models import db
 import website.models as models
 import website.utils as utils
-
-# standard library utilities
-from datetime import datetime
-import os
 
 def create_app(config_object) :
     app = Flask(config_object.APP_NAME)
