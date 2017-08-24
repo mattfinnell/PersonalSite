@@ -1,7 +1,1 @@
-# Run site
-cd website
-
-npm install postcss-cli
-npm install autoprefixer
-
-gunicorn run:app
+gunicorn --config gunicorn_conf.py wsgi:app
