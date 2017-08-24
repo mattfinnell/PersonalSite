@@ -1,20 +1,17 @@
-from website.instance import secretvars
 import os
-
-basedir  = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object) :
     # Typical meta-variables
     APP_NAME = "__mattfinnell_dot_io__"
-    CSRF_ENABLED = True
     STATIC_FOLDER = "website/static"
+    CSRF_ENABLED = True
 
     # Database stuff
-    SQLALCHEMY_DATABASE_URI = secretvars.SQL_DB_URI
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Admin page key
-    SECRET_KEY = secretvars.SECRET_KEY
+    SECRET_KEY = os.getenv("FLASK_ADMIN_KEY")
 
     # Quick identifiers
     STAGING = False
@@ -31,9 +28,11 @@ class Config(object) :
     SASS_OUTPUT_COMMENTS = True
 
 class DevelopmentConfig(Config) :
+    SQLALCHEMY_DATABASE_URI = "sqlite:///development.db"
     DEVELOPMENT = True
 
 class TestingConfig(Config) :
+    SQLALCHEMY_DATABASE_URI = "sqlite:///test.db"
     TESTING = True
 
 class StagingConfig(Config) :
@@ -41,8 +40,6 @@ class StagingConfig(Config) :
 
 class ProductionConfig(Config) :
     PRODUCTION = True
-
-    GOOGLE_ANALYTICS = True
     DEBUG = False
 
     SASS_OUTPUT_STYLE = "compressed"
