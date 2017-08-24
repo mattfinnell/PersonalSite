@@ -5,7 +5,7 @@ basedir  = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object) :
     # Typical meta-variables
-    APP_NAME = "mattfinnell.io"
+    APP_NAME = "__mattfinnell_dot_io__"
     CSRF_ENABLED = True
     STATIC_FOLDER = "website/static"
 

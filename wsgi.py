@@ -1,7 +1,10 @@
 from website.app import create_app
-from website.config import DevelopmentConfig
+import website.config as config
 
-app = create_app(DevelopmentConfig)
+import os
+
+config_object = eval(os.environ['APP_SETTINGS'])
+app = create_app(config_object)
 
 if __name__ == "__main__" :
     app.run()
