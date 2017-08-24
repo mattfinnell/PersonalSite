@@ -1,10 +1,4 @@
-#      ________           __      ______            _____
-#     / ____/ /___ ______/ /__   / ____/___  ____  / __(_)___ _
-#    / /_  / / __ `/ ___/ //_/  / /   / __ \/ __ \/ /_/ / __ `/
-#   / __/ / / /_/ (__  ) ,<    / /___/ /_/ / / / / __/ / /_/ /
-#  /_/   /_/\__,_/____/_/|_|   \____/\____/_/ /_/_/ /_/\__, /
-#                                                     /____/
-
+from website.instance import secretvars
 import os
 
 basedir  = os.path.abspath(os.path.dirname(__file__))
@@ -14,6 +8,13 @@ class Config(object) :
     APP_NAME = "__mattfinnell_dot_io_website__"
     CSRF_ENABLED = True
     STATIC_FOLDER = "website/static"
+
+    # Database stuff
+    SQLALCHEMY_DATABASE_URI = secretvars.SQL_DB_URI
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Admin page key
+    SECRET_KEY = secretvars.SECRET_KEY
 
     # Quick identifiers
     STAGING = False

@@ -1,15 +1,27 @@
 # Flask Framework
 from flask import Flask, render_template, Blueprint
 
-# Flask extensions
+# Flask assets
 from flask_assets import Environment
+
+# SQLAlchemy Database
+import flask_sqlalchemy
+from flask_sqlalchemy import SQLAlchemy
+
+# DB Admin dashboard
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 # Werkzeug utilities
 from werkzeug.utils import find_modules, import_string
 
-# local utilities
-from datetime import datetime
+# local application modules
+from website.models import db
+import website.models as models
 import website.utils as utils
+
+# standard library utilities
+from datetime import datetime
 import os
 
 def create_app(config_object) :
@@ -20,6 +32,7 @@ def create_app(config_object) :
     registration_functions = [
         register_assets,
         register_blueprints,
+        register_database,
         register_context_processors
     ]
 
@@ -27,6 +40,22 @@ def create_app(config_object) :
         r(app)
 
     return app
+
+def register_database(app) :
+    db.init_app(app)
+
+    with app.app_context() :
+        db.create_all()
+
+    admin = Admin(app, name=app.name, template_mode="bootstrap3")
+
+    sqlalchemy_models = utils.get_classes_of_type(
+        models,
+        flask_sqlalchemy._BoundDeclarativeMeta
+    )
+
+    for model in sqlalchemy_models :
+        admin.add_view(ModelView(model, db.session))
 
 def register_assets(app) :
     dev_config = app.config["DEVELOPMENT"]

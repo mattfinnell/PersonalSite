@@ -1,6 +1,7 @@
 from flask import render_template, current_app
 from flask_assets import Bundle
 from glob import glob
+
 import shutil
 import os
 

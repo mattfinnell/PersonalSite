@@ -1,25 +1,14 @@
 from flask import Blueprint
 
 from website.utils import render
+from website.models import Skill
 
-site = Blueprint(
-    'site',
-    __name__,
-    template_folder="../templates",
-)
+site = Blueprint('site', __name__, template_folder="../templates")
 
 @site.route("/")
-@site.route("/about")
 def about() :
-    data = {
-        "skills" : [
-            ("Python", 80),
-            ("HTML", 80),
-            ("CSS", 70),
-            ("JavaScript", 50),
-            ("Jinja", 50),
-        ]
-    }
+    skills = list(reversed(list(Skill.query.order_by(Skill.percent))))
+    data = {"skills" : skills}
     return render("about.html", data=data)
 
 @site.route("/landing")

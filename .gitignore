@@ -23,6 +23,9 @@ website/static/css
 # Don't track the black hole that is the node modules.
 **/node_modules
 
+# Don't track databases
+*.db
+
 #      ____       ____            ____     ____
 #     / __ \___  / __/___ ___  __/ / /_   /  _/___ _____  ____  ________  _____
 #    / / / / _ \/ /_/ __ `/ / / / / __/   / // __ `/ __ \/ __ \/ ___/ _ \/ ___/
