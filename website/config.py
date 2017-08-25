@@ -20,7 +20,6 @@ class Config(object) :
     TESTING = False
 
     # Feature Flags
-    GOOGLE_ANALYTICS = False
     DEBUG = True
 
     # LIB-SASS compilation options
