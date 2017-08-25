@@ -2,7 +2,7 @@ import os
 
 class Config(object) :
     # Typical meta-variables
-    APP_NAME = "__mattfinnell_dot_io__"
+    APP_NAME = "Personal Website"
     STATIC_FOLDER = "website/static"
     CSRF_ENABLED = True
 
@@ -28,11 +28,9 @@ class Config(object) :
     SASS_OUTPUT_COMMENTS = True
 
 class DevelopmentConfig(Config) :
-    SQLALCHEMY_DATABASE_URI = "sqlite:///development.db"
     DEVELOPMENT = True
 
 class TestingConfig(Config) :
-    SQLALCHEMY_DATABASE_URI = "sqlite:///test.db"
     TESTING = True
 
 class StagingConfig(Config) :
