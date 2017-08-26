@@ -64,7 +64,7 @@ def register_assets(app) :
     assets = Environment(app)
     assets.debug       = True
     assets.auto_build  = True
-    assets.url_mapping = True
+    assets.url_mapping = False
     assets.manifest    = False
     assets.cache       = False
 

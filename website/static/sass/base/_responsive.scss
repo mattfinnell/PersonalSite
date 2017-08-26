@@ -1,21 +1,36 @@
 /* Follow Responsiveness via Gracefull Degradation */
-
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 
 @media(max-width : $device_lg){
-
 }
 
 @media(max-width : $device_md) {
   body > .wrapper {
     @include padding($wrapper_top_gutter, $wrapper_md_side_gutter);
   }
+
+  footer ul.actions li {
+    margin : 0 auto;
+  }
+
+  footer a.button {
+    width : 15em;
+  }
 }
 
 @media(max-width : $device_sm) {
   body {
     font-size : 12pt;
+  }
+
+  section#content #resume a.button {
+    margin : 10px 0;
+    width : 15em;
+
+    :last-of-type {
+      margin-bottom : 0;
+    }
   }
 }
 
@@ -28,7 +43,6 @@
   body section#content > section {
     padding : 3em 1em 2em 1em;
   }
-
 
   nav {
     display : None;
