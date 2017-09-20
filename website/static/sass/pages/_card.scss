@@ -1,0 +1,109 @@
+@import '../components/buttons';
+
+$primary_color : #fffffd;
+$accent_color : #c4cccf;
+
+body.card {
+  text-transform : uppercase;
+  letter-spacing : 0.2em;
+  text-align : center;
+  font-size : 12pt;
+
+  .wrapper {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
+    height : calc(100% - 3em);
+  }
+
+  section#main {
+    min-width : 320px;
+    max-width : 25em;
+    background-color : $primary_color;
+    padding : 3em;
+
+  }
+
+  .avatar {
+    position : relative;
+    display : block;
+  }
+
+  .avatar:before {
+    content : '';
+    display : block;
+    position : absolute;
+    top : 50%;
+    width : calc(100% - 3em);
+    height : 1px;
+    z-index : -1;
+    background : $accent_color;
+  }
+
+  .avatar img {
+    border-radius : 100%;
+  }
+
+  footer {
+    width : 100%;
+  }
+
+  @include social_media_buttons(2em, 1px, $accent_color, $primary_color);
+
+  @media (max-width : 460px) {
+    padding : 0;
+    width : 100%;
+  }
+
+  @media (max-height : 540px) and (min-aspect-ratio : 4/3), handheld and  (orientation : landscape) {
+    section#main > * {
+      margin : 0 30px 0 0;
+    }
+
+    section#main > footer {
+      margin : 0;
+    }
+
+    /* display card across a row instead of as a column*/
+    section#main {
+      display : flex;
+      align-items : center;
+      text-align : left;
+      padding : 3em;
+    }
+
+    /* Clear the Pinstripe on the avatar */
+    .avatar:before {
+      display : none;
+      margin-right : 20px;
+    }
+
+    /* Clear the outer shadow border on the avatar */
+    .avatar img {
+      box-shadow : 0 0 0 0 #fff;
+    }
+
+    section#main ul.icons li {
+      display : block;
+      padding : 0;
+    }
+  }
+
+  @media (max-width : 460px) {
+    div#wrapper {
+      padding : 0;
+      width : 100%;
+    }
+
+    section#main {
+      margin  : 40px 0 0 0;
+      padding : 25px 0 20px 0;
+      width : 100%;
+    }
+
+    section#main .avatar:before {
+      width : calc(100% + 3em);
+    }
+  }
+}

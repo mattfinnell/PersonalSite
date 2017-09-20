@@ -64,7 +64,7 @@ $social_media_icons : (
   padding: 0.675em 0.5em;
 }
 
-body#landing {
+body#landing{
   background-image: url("../images/overlay.png"), linear-gradient(60deg, $gradient_color_a 5%, $gradient_color_b), $background_image;
   background-repeat : repeat, no-repeat, no-repeat;
   background-attachment : fixed, fixed, fixed;
@@ -96,10 +96,6 @@ body#landing {
     margin : 0 0 13px 0;
   }
 
-  section#main p {
-      margin : 0 0 20px 0;
-  }
-
   #wrapper {
     display : flex;
     padding : 1.5em;
@@ -118,12 +114,16 @@ body#landing {
 
   section#main {
     min-width : 320px;
-    max-width : 100%;
+    max-width : 30em;
     background-color : $primary_color;
     text-align : center;
     padding : 4.5em 3em;
     border-radius : 4px;
     opacity : 0.925;
+  }
+
+  section#main p {
+      margin : 0 0 20px 0;
   }
 
   .avatar {

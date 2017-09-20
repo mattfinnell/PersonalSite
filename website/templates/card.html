@@ -1,27 +1,12 @@
 {% extends "master.html" %}
 
-{% block title %} Welcome {% endblock %}
+{% block title %}Card{% endblock %}
 
-{% block css %}
-  <style>
-    /* Vertically Centers the content. This causes conflict with styles on other pages */
-    html, body, #wrapper {
-      height : 100%;
-      margin : 0;
-      padding : 0;
-    }
-  </style>
-
-  <link rel="stylesheet" href="/static/css/style.css"/>
-  <!--[if lte IE 9]><link rel="stylesheet" href="/css/landing-ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/css/landing-ie8.css" /><![endif]-->
-{% endblock %}
-
-{% block body_id %}landing{% endblock %}
+{% block body_classes %}card{% endblock %}
 
 {% block content %}
 	<!-- Wrapper -->
-	<div id="wrapper">
+	<div class="wrapper">
 
 		<!-- Main -->
     <section id="main">
@@ -32,7 +17,7 @@
         <p>Website Coming Soon</p>
       </div>
       <footer class="container">
-        <ul class="row icons">
+        <ul class="row social-media-buttons">
           <li><a target="_blank" class="fa fa-github"     href="https://github.com/mattfinnell" ></a></li>
           <li><a target="_blank" class="fa fa-linkedin"   href="https://www.linkedin.com/in/mattfinnell/#" ></a></li>
           <li><a target="_blank" class="fa fa-instagram"  href="https://www.instagram.com/matt_finnell/" ></a></li>
@@ -49,15 +34,4 @@
       </ul>
     </footer>
 	</div>
-{% endblock %}
-
-{% block js %}
-	<!-- Scripts -->
-	<!--[if lte IE 8]><script src="static/js/respond.min.js"></script><![endif]-->
-	<script>
-		if ('addEventListener' in window) {
-			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-		}
-	</script>
 {% endblock %}
