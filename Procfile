@@ -1,1 +1,1 @@
-web: gunicorn --config gunicorn.conf.py wsgi:app
+web: mv node_modules website && gunicorn --config gunicorn.conf.py wsgi:app
