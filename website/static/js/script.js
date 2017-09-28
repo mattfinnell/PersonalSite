@@ -11,7 +11,6 @@
 			leave : function() { $nav.removeClass('alt'); }
 		};
 
-
 		var clickHandler = function() {
 		var $this = $(this);
 
