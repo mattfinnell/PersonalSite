@@ -1,5 +1,5 @@
 # Flask Framework
-from flask import Flask, render_template, Blueprint
+from flask import Flask, Blueprint
 
 # Flask assets
 from flask_assets import Environment
@@ -33,7 +33,8 @@ def create_app(config_object) :
         register_assets,
         register_blueprints,
         register_database,
-        register_context_processors
+        register_context_processors,
+        register_error_pages
     ]
 
     for r in registration_functions :
@@ -84,6 +85,15 @@ def register_assets(app) :
     app.config["ASSETS"] = assets
 
     return None
+
+def register_error_pages(app) :
+    @app.errorhandler(404)
+    def page_not_found(e) :
+        return utils.render('404.html'), 404
+
+    @app.errorhandler(500)
+    def server_error(e) :
+        return utils.render('server_error.html'), 500
 
 def register_blueprints(app) :
     for name in find_modules("website.views") :

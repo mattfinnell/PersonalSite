@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, abort
 
 from website.utils import render
 from website.models import Skill
@@ -11,3 +11,7 @@ def about() :
     data = {"skills" : skills}
 
     return render("about.html", data=data)
+
+@site.route("/card")
+def card() :
+    return render("card.html")

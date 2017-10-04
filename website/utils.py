@@ -35,8 +35,6 @@ def _clear_directory(path) :
 
     os.mkdir(path)
 
-
-
 def get_classes_of_type(module, class_type):
     object_names = filter(
         lambda x : issubclass(type(getattr(module, x)), class_type),
