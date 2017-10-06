@@ -1,3 +1,5 @@
+require("../sass/style.scss")
+
 (function($){
 	$(function () {
 		var $main = $("#content");
@@ -11,17 +13,16 @@
 			leave : function() { $nav.removeClass('alt'); }
 		};
 
-
 		var clickHandler = function() {
-		var $this = $(this);
+            var $this = $(this);
 
-		$nav_a
-			.removeClass('active')
-			.removeClass('active-locked');
+            $nav_a
+                .removeClass('active')
+                .removeClass('active-locked');
 
-		$this
-			.removeClass('active')
-			.removeClass('active-locked');
+            $this
+                .removeClass('active')
+                .removeClass('active-locked');
 		};
 
 		$main.scrollex(scrollexSettings);
