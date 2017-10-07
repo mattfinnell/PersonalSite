@@ -1,4 +1,6 @@
-require("../sass/style.scss")
+/* jshint esversion : 6 */
+
+import '../sass/style.scss';
 
 (function($){
 	$(function () {
