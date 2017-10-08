@@ -1,3 +1,5 @@
+import './scrollex.js';
+
 (function($){
 	$(function () {
 		var $main = $("#content");

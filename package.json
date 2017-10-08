@@ -24,6 +24,6 @@
   },
   "scripts": {
     "build": "nodemon --watch webpack.config.js --watch package.json ./node_modules/.bin/webpack-dev-server",
-    "build:prod": "webpack -p"
+    "build:prod": "./node_modules/.bin/webpack -p"
   }
 }
