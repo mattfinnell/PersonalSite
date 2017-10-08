@@ -4,10 +4,13 @@ const path = require("path");
 
 const webpack = require("webpack");
 
+const bootstrapConfig = require('./webpack.bootstrap.config.js');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractCssPlugin = new ExtractTextPlugin({
-    filename : 'style.css'
+    filename : '[name].css',
+    allChunks : true
 });
 
 const PostCssLoader = {
@@ -50,6 +53,7 @@ const FileRule = {
 module.exports = {
     entry : {
         app : "./website/static/js/script.js",
+        bootstrap : bootstrapConfig.dev
     },
     output : {
         path : path.resolve(__dirname, '/dist'),
@@ -60,6 +64,8 @@ module.exports = {
         rules : [
             ScssRule,
             FileRule,
+            { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
+            { test: /\.(ttf|eot)$/, loader: 'file-loader' },
         ]
     },
     plugins : [
