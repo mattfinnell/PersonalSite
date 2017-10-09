@@ -43,9 +43,14 @@ const ScssRule = {
     })
 };
 
-const FileRule = {
+const ImageRule = {
     test : /\.(png|jpg)$/,
     loader : "file-loader"
+};
+
+const FontRule = {
+    test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+    loader: 'file-loader?name=fonts/[name].[ext]'
 };
 
 module.exports = {
@@ -61,9 +66,8 @@ module.exports = {
     module : {
         rules : [
             ScssRule,
-            FileRule,
-            { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
-            { test: /\.(ttf|eot)$/, loader: 'file-loader' },
+            ImageRule,
+            FontRule
         ]
     },
     plugins : [
