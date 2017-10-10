@@ -1,5 +1,5 @@
 
-/* set this so the webpack.bootstrap.config.js knows where to look */
+/* Set this so that webpack.bootstrap.config.js knows where to look */
 process.env.BOOTSTRAPRC_LOCATION = "./.bootstraprc";
 
 const path = require("path");
@@ -52,9 +52,14 @@ const ImageRule = {
     loader : "file-loader"
 };
 
-const FontRule = {
-    test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-    loader: 'file-loader?name=/fonts/[name].[ext]'
+const WoffFontRule = {
+    test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+    use: "url-loader"
+};
+
+const OpenFontRule = {
+    test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+    use: 'file-loader'
 };
 
 module.exports = {
@@ -71,7 +76,8 @@ module.exports = {
         rules : [
             ScssRule,
             ImageRule,
-            FontRule
+            OpenFontRule,
+            WoffFontRule
         ]
     },
     plugins : [

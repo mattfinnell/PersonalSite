@@ -1,5 +1,6 @@
-/* Import Scss */
+/* Import all scss files */
+import 'font-awesome/scss/font-awesome.scss';
 import '../sass/style.scss';
 
-/* import document.ready file */
+/* Import all js files */
 import './onload.js';
