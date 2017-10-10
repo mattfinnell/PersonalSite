@@ -30,7 +30,6 @@
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
 		{% if config.DEVELOPMENT %}
-      <link rel="stylesheet" href="/static/development/font-awesome.min.css">
       <link rel="stylesheet" href="http://localhost:8080/dist/bootstrap.css">
       <link rel="stylesheet" href="http://localhost:8080/dist/app.css">
 		{% endif %}
@@ -42,7 +41,6 @@
     {% block content %}{% endblock %}
 
 		{% if config.DEVELOPMENT %}
-      <!--<script src="/static/development/jquery.scrollex.min.js"></script>-->
       <script src="http://localhost:8080/dist/bootstrap.bundle.js"></script>
       <script src="http://localhost:8080/dist/app.bundle.js"></script>
 		{% endif %}

@@ -1,3 +1,7 @@
+
+/* set this so the webpack.bootstrap.config.js knows where to look */
+process.env.BOOTSTRAPRC_LOCATION = "./.bootstraprc";
+
 const path = require("path");
 
 const webpack = require("webpack");
@@ -50,7 +54,7 @@ const ImageRule = {
 
 const FontRule = {
     test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-    loader: 'file-loader?name=fonts/[name].[ext]'
+    loader: 'file-loader?name=/fonts/[name].[ext]'
 };
 
 module.exports = {
@@ -76,5 +80,11 @@ module.exports = {
             $ : 'jquery',
             jQuery : 'jquery'
         })
-    ]
+    ],
+    devServer : {
+        stats : {
+            modules : false,
+            children : false
+        }
+    }
 };
