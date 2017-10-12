@@ -1,14 +1,15 @@
 
-/* Set this so that webpack.bootstrap.config.js knows where to look */
-process.env.BOOTSTRAPRC_LOCATION = "./.bootstraprc";
-
-const path = require("path");
 
 const webpack = require("webpack");
+const path = require("path");
 
-const bootstrapConfig = require('./webpack.bootstrap.config.js');
+process.env.BOOTSTRAPRC_LOCATION = "./.bootstraprc";
+const bootstrapConfig = require('./webpack.bootstrap.js');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const assetsDirectory = path.resolve(__dirname, '..', 'website', 'static');
+const outputDirectory = path.resolve(__dirname, '..', 'dist');
 
 const extractCssPlugin = new ExtractTextPlugin({
     filename : '[name].css',
@@ -21,7 +22,6 @@ const PostCssLoader = {
         plugins : loader => [
             require("autoprefixer")()
         ],
-        sourceMap : true
     }
 };
 
@@ -68,8 +68,8 @@ module.exports = {
         bootstrap : bootstrapConfig.dev
     },
     output : {
-        path : path.resolve(__dirname, '/dist'),
-        publicPath : path.resolve(__dirname, '/dist'),
+        path : outputDirectory,
+        // publicPath : outputDirectory,
         filename : "[name].bundle.js"
     },
     module : {
@@ -86,11 +86,5 @@ module.exports = {
             $ : 'jquery',
             jQuery : 'jquery'
         })
-    ],
-    devServer : {
-        stats : {
-            modules : false,
-            children : false
-        }
-    }
+    ]
 };

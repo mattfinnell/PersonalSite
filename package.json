@@ -21,10 +21,11 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
   },
   "scripts": {
-    "start": "nodemon --watch package.json --watch webpack ./node_modules/.bin/webpack-dev-server -- --config webpack/webpack.config.js",
-    "build": "./node_modules/.bin/webpack -p --config webpack/webpack.config.js"
+    "start": "nodemon --watch package.json --watch webpack ./node_modules/.bin/webpack-dev-server -- --config webpack/webpack.dev.js",
+    "build": "./node_modules/.bin/webpack -p --config webpack/webpack.prod.js"
   }
 }
