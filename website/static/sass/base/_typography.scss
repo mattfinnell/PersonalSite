@@ -1,12 +1,16 @@
-
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
+@import '~source-sans-pro/source-sans-pro.css';
 
 @import "../abstracts/variables";
 
 body {
   font-family : "Source Sans Pro";
+  font-weight : 200;
   font-size : 14pt;
   color : $text_color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight : 200;
 }
 
 a, a:link, a:visited, a:active {

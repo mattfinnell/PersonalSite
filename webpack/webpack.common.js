@@ -1,90 +1,37 @@
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const path = require('path');
+const parts = require('./webpack.parts.js');
 
-
-const webpack = require("webpack");
-const path = require("path");
-
-process.env.BOOTSTRAPRC_LOCATION = "./.bootstraprc";
-const bootstrapConfig = require('./webpack.bootstrap.js');
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const assetsDirectory = path.resolve(__dirname, '..', 'website', 'static');
-const outputDirectory = path.resolve(__dirname, '..', 'dist');
-
-const extractCssPlugin = new ExtractTextPlugin({
-    filename : '[name].css',
-    allChunks : true
-});
-
-const PostCssLoader = {
-    loader : "postcss-loader",
-    options : {
-        plugins : loader => [
-            require("autoprefixer")()
-        ],
-    }
-};
-
-const SassLoader = {
-    loader : "sass-loader",
-    options : {
-        outputStyle : "expanded"
-    }
-};
-
-const CssLoader = {
-    loader : "css-loader"
-};
-
-const ScssRule = {
-    test : /\.scss$/,
-    use : extractCssPlugin.extract({
-        use : [
-            CssLoader,
-            PostCssLoader,
-            SassLoader
-        ]
-    })
-};
-
-const ImageRule = {
-    test : /\.(png|jpg)$/,
-    loader : "file-loader"
-};
-
-const WoffFontRule = {
-    test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    use: "url-loader"
-};
-
-const OpenFontRule = {
-    test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-    use: 'file-loader'
-};
-
-module.exports = {
-    entry : {
-        app : "./website/static/js/script.js",
-        bootstrap : bootstrapConfig.dev
+module.exports = merge([
+  {
+    entry: {
+      app: path.resolve(parts.PATHS.assets, 'js', 'script.js'),
+      vendor: ['bootstrap-loader/extractStyles'],
     },
-    output : {
-        path : outputDirectory,
-        // publicPath : outputDirectory,
-        filename : "[name].bundle.js"
+    output: {
+      path: '/website/static/dist/',
+      publicPath: '/website/static/dist/',
+      filename: 'js/[name].bundle.js',
     },
-    module : {
-        rules : [
-            ScssRule,
-            ImageRule,
-            OpenFontRule,
-            WoffFontRule
-        ]
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      }),
+      // new webpack.IgnorePlugin(new RegExp(unusedSourceSansProFonts)),
+    ],
+  },
+  parts.extractSass({
+    include: [
+      parts.PATHS.assets,
+      path.resolve('node_modules', 'font-awesome'),
+    ],
+  }),
+  parts.loadImages(),
+  parts.loadFonts({
+    options: {
+      name: 'fonts/[name].[ext]',
     },
-    plugins : [
-        extractCssPlugin,
-        new webpack.ProvidePlugin({
-            $ : 'jquery',
-            jQuery : 'jquery'
-        })
-    ]
-};
+  }),
+]);

@@ -1,57 +1,57 @@
-import './scrollex.js';
+import jquery from 'jquery';
 
-(function($){
-	$(function () {
-		var $main = $("#content");
-		var $nav = $("nav");
+import './libs/scrollex';
 
-		var $nav_a = $nav.find('a');
+(($) => {
+  $(() => {
+    const $main = $('#content');
+    const $nav = $('nav');
 
-		var scrollexSettings = {
-			mode : 'top',
-			enter : function() { $nav.addClass('alt'); },
-			leave : function() { $nav.removeClass('alt'); }
-		};
+    const $navA = $nav.find('a');
 
-		var clickHandler = function() {
-            var $this = $(this);
+    const scrollexSettings = {
+      mode: 'top',
+      enter: () => { $nav.addClass('alt'); },
+      leave: () => { $nav.removeClass('alt'); },
+    };
 
-            $nav_a
-                .removeClass('active')
-                .removeClass('active-locked');
+    const clickHandler = () => {
+      const $this = $(this);
 
-            $this
-                .removeClass('active')
-                .removeClass('active-locked');
-		};
+      $navA
+        .removeClass('active')
+        .removeClass('active-locked');
 
-		$main.scrollex(scrollexSettings);
+      $this
+        .removeClass('active')
+        .removeClass('active-locked');
+    };
 
-		$nav_a
-			.on('click', clickHandler)
-			.each(function() {
-				var $this = $(this);
-				var $section = $($this.attr('href'));
+    $main.scrollex(scrollexSettings);
 
-				var enterHandler = function() {
-				$section.removeClass('inactive');
+    $navA
+      .on('click', clickHandler)
+      .each(() => {
+        const $this = $(this);
+        const $section = $($this.attr('href'));
 
-				if($nav_a.filter('.active-locked').length === 0){
-					$nav_a.removeClass('active');
-					$this.addClass('active');
+        const enterHandler = () => {
+          $section.removeClass('inactive');
 
-				} else if ($this.hasClass('active-locked')) {
-					$this.removeClass('active-locked');
-				}
-			};
+          if ($navA.filter('.active-locked').length === 0) {
+            $navA.removeClass('active');
+            $this.addClass('active');
+          } else if ($this.hasClass('active-locked')) {
+            $this.removeClass('active-locked');
+          }
+        };
 
-			var scrollexSettings = {
-				mode : 'middle',
-				enter : enterHandler,
-			};
+        const settings = {
+          mode: 'middle',
+          enter: enterHandler,
+        };
 
-			$section.scrollex(scrollexSettings);
-		});
-	});
-})(jQuery);
-
+        $section.scrollex(settings);
+      });
+  });
+})(jquery);

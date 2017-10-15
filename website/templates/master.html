@@ -30,8 +30,8 @@
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
 		{% if config.DEVELOPMENT %}
-      <link rel="stylesheet" href="http://localhost:8080/dist/bootstrap.css">
-      <link rel="stylesheet" href="http://localhost:8080/dist/app.css">
+      <link rel="stylesheet" href="http://localhost:8080/website/static/dist/css/vendor.css">
+      <link rel="stylesheet" href="http://localhost:8080/website/static/dist/css/app.css">
 		{% endif %}
 
     {% block css %}{% endblock %}
@@ -41,8 +41,8 @@
     {% block content %}{% endblock %}
 
 		{% if config.DEVELOPMENT %}
-      <script src="http://localhost:8080/dist/bootstrap.bundle.js"></script>
-      <script src="http://localhost:8080/dist/app.bundle.js"></script>
+      <script src="http://localhost:8080/website/static/dist/js/vendor.bundle.js"></script>
+      <script src="http://localhost:8080/website/static/dist/js/app.bundle.js"></script>
 		{% endif %}
 
     {% block js %}{% endblock %}
