@@ -39,20 +39,6 @@ body > .wrapper > footer {
     padding : 0;
   }
 
-  #builtwith {
-    font-family : monospace;
-    font-style : normal;
-    font-weight : 100;
-    font-size : 0.8em;
-
-    color : $text_color;
-
-    img {
-      width : $tool_icon_size;
-      height : $tool_icon_size;
-    }
-  }
-
   .col-md-6:last-child {
     text-align : right;
   }
