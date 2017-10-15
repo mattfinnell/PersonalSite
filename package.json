@@ -22,7 +22,7 @@
     "purifycss-webpack": "^0.7.0",
     "resolve-url-loader": "^2.1.1",
     "sass-loader": "^6.0.6",
-    "source-sans-pro": "^2.0.10",
+    "source-sans-pro": "https://github.com/mattfinnell/npm-source-sans-pro.git",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.7.1",

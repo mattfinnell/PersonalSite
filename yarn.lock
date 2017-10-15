@@ -4866,9 +4866,9 @@ source-map@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
-source-sans-pro@^2.0.10:
+"source-sans-pro@https://github.com/mattfinnell/npm-source-sans-pro.git":
   version "2.0.10"
-  resolved "https://registry.yarnpkg.com/source-sans-pro/-/source-sans-pro-2.0.10.tgz#c1ca859cf164a088944c5e83745085e87cd533a9"
+  resolved "https://github.com/mattfinnell/npm-source-sans-pro.git#d65361a5748d7f05b8d0bbf7544dc18a3d3018ad"
 
 sparkles@^1.0.0:
   version "1.0.0"
