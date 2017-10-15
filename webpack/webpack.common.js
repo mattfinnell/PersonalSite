@@ -34,4 +34,18 @@ module.exports = merge([
       name: 'fonts/[name].[ext]',
     },
   }),
+  parts.extractBundles([
+    {
+      name: 'vendor',
+      minChunks: ({ resource }) => (
+        resource &&
+        resource.indexOf('node_modules') >= 0 &&
+        resource.match(/\.js$/)
+      ),
+    },
+    {
+      name: 'manifest',
+      minChunks: Infinity,
+    },
+  ]),
 ]);

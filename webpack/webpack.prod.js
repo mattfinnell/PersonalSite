@@ -18,19 +18,5 @@ module.exports = merge([
   //   paths: glob.sync(`${parts.PATHS.assets}/**/*.js`, { nodir: true }),
   // }),
   // parts.generateSourceMaps({ type: 'source-map' }),
-  parts.extractBundles([
-    {
-      name: 'vendor',
-      minChunks: ({ resource }) => (
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.js$/)
-      ),
-    },
-    {
-      name: 'manifest',
-      minChunks: Infinity,
-    },
-  ]),
   // parts.minifyJavaScript(),
 ]);
