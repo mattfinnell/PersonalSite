@@ -27,7 +27,7 @@ class Config(object) :
     SASS_OUTPUT_COMMENTS = True
 
 class DevelopmentConfig(Config) :
-    SQLALCHEMY_DATABASE_URI = "sqlite:///development.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///.development.db"
     DEVELOPMENT = True
 
 class TestingConfig(Config) :

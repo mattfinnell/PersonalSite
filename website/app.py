@@ -1,9 +1,6 @@
 # Flask Framework
 from flask import Flask, Blueprint
 
-# Flask assets
-from flask_assets import Environment
-
 # SQLAlchemy Database
 import flask_sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
@@ -17,10 +14,8 @@ from werkzeug.utils import find_modules, import_string
 
 # standard library utilities
 from datetime import datetime
-import os
 
 # local application modules
-from website.models import db
 import website.models as models
 import website.utils as utils
 
@@ -30,11 +25,9 @@ def create_app(config_object) :
     app.static_folder = config_object.STATIC_FOLDER
 
     registration_functions = [
-        register_assets,
         register_blueprints,
         register_database,
         register_context_processors,
-        register_error_pages
     ]
 
     for r in registration_functions :
@@ -43,10 +36,10 @@ def create_app(config_object) :
     return app
 
 def register_database(app) :
-    db.init_app(app)
+    models.db.init_app(app)
 
     with app.app_context() :
-        db.create_all()
+        models.db.create_all()
 
     admin = Admin(app, name=app.name, template_mode="bootstrap3")
 
@@ -56,52 +49,19 @@ def register_database(app) :
     )
 
     for model in sqlalchemy_models :
-        admin.add_view(ModelView(model, db.session))
-
-def register_assets(app) :
-    dev_config = app.config["DEVELOPMENT"]
-
-    # Configure Flask Assets
-    assets = Environment(app)
-    assets.debug       = True
-    assets.auto_build  = True
-    assets.url_mapping = False
-    assets.manifest    = False
-    assets.cache       = False
-
-    assets.config["AUTOPREFIXER_BIN"] = os.path.join(
-        app.root_path,
-        "website",
-        "node_modules",
-        "postcss-cli",
-        "bin",
-        "postcss"
-    )
-
-    assets.config["LIBSASS_STYLE"] = app.config["SASS_OUTPUT_STYLE"]
-
-    assets = utils.compile_assets(assets)
-
-    app.config["ASSETS"] = assets
-
-    return None
-
-def register_error_pages(app) :
-    @app.errorhandler(404)
-    def page_not_found(e) :
-        return utils.render('404.html'), 404
-
-    @app.errorhandler(500)
-    def server_error(e) :
-        return utils.render('server_error.html'), 500
+        admin.add_view(ModelView(model, models.db.session))
 
 def register_blueprints(app) :
-    for name in find_modules("website.views") :
-        module = import_string(name)
+    view_modules = map(import_string, find_modules("website.views"))
 
-        for attr in module.__dict__ :
-            if isinstance(getattr(module, attr), Blueprint) :
-                app.register_blueprint(getattr(module, attr))
+    for view_module in view_modules:
+        blueprints = utils.get_classes_of_type(
+            view_module,
+            Blueprint
+        )
+
+        for blueprint in blueprints :
+            app.register_blueprint(blueprint)
 
 def register_context_processors(app) :
     @app.context_processor

@@ -1,6 +1,48 @@
 {
-	"dependencies" : {
-		"postcss-cli" : "4.1.0",
-		"autoprefixer" : "7.1.2"
-	}
+  "name": "mattfinnell.io",
+  "version": "1.0.0",
+  "author": "Matt Finnell <mattfinnell104@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^7.1.5",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-loader": "^2.2.0",
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "0.10.1",
+    "font-awesome": "^4.7.0",
+    "glob": "^7.1.2",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.8",
+    "purecss": "^1.0.0",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
+    "resolve-url-loader": "^2.1.1",
+    "sass-loader": "^6.0.6",
+    "source-sans-pro": "https://github.com/mattfinnell/npm-source-sans-pro.git",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.7.1",
+    "webpack-closure-compiler": "^2.1.5",
+    "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "nodemon": "^1.12.1",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "scripts": {
+    "lint:js": "eslint website webpack/webpack.*.js --cache",
+    "start": "nodemon --watch package.json --watch webpack --exec \"webpack-dev-server --config webpack/webpack.dev.js\"",
+    "experiment": "nodemon --watch package.json --watch webpack --exec \"webpack-dev-server  --config webpack/webpack.prod.js\"",
+    "build": "webpack -p --config webpack/webpack.prod.js"
+  }
 }
