@@ -19,5 +19,24 @@ module.exports = merge([
       },
     },
   },
-  parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
+  parts.extractCSS({
+    test: /\.scss/,
+    use: [
+      'css-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          outputStyle: 'expanded',
+          sourceComments: 'true',
+        },
+      },
+    ],
+    output: 'css/[name].css',
+  }),
+  parts.extractCSS({
+    test: /\.css$/,
+    use: 'css-loader',
+    output: 'css/[name].css',
+  }),
+  // parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
 ]);

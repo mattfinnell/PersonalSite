@@ -41,6 +41,7 @@
     {% block content %}{% endblock %}
 
 		{% if config.DEVELOPMENT %}
+      <script src="http://localhost:8080/website/static/dist/js/manifest.bundle.js"></script>
       <script src="http://localhost:8080/website/static/dist/js/vendor.bundle.js"></script>
       <script src="http://localhost:8080/website/static/dist/js/app.bundle.js"></script>
 		{% endif %}
