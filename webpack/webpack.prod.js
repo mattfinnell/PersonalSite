@@ -1,21 +1,10 @@
-const webpackCommon = require('./webpack.common.js');
-
+const common = require('./webpack.common.js');
 const merge = require('webpack-merge');
+const path = require('path');
 const parts = require('./webpack.parts.js');
 
 module.exports = merge([
-  webpackCommon,
-  {
-    devServer: {
-      stats: {
-        children: false,
-        modules: false,
-      },
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    },
-  },
+  common,
   parts.extractCSS({
     test: /\.css/,
     use: [
@@ -23,6 +12,11 @@ module.exports = merge([
       parts.autoprefix,
     ],
     output: 'css/[name].css',
+  }),
+  parts.loadFonts({
+    options: {
+      name: 'fonts/[name].[ext]',
+    },
   }),
   parts.extractCSS({
     test: /\.scss/,
@@ -38,6 +32,12 @@ module.exports = merge([
     ],
     output: 'css/[name].css',
   }),
-  // parts.generateSourceMaps({ type: 'source-map' }),
-  parts.uglifyJS(),
+  parts.minifyJavaScript(),
+  parts.clean(
+    ['build'],
+    {
+      root: path.resolve('website', 'static'),
+      verbose: true,
+    }
+  ),
 ]);

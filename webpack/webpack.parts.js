@@ -1,14 +1,15 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BabelWebpackPlugin = require('babel-minify-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const assetsDir = 'website/static/';
-const buildDir = 'website/static/build/';
+const assetsDir = path.join('website', 'static');
+const buildDir = path.join('build');
 const absoluteAssetsDir = path.resolve(assetsDir);
-const absoluteBuildDir = path.resolve(buildDir);
+const absoluteBuildDir = path.resolve(assetsDir, 'build');
 
 module.exports.PATHS = {
   assets: absoluteAssetsDir,
@@ -96,6 +97,12 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   },
 });
 
+exports.clean = (dirsToClean, options = {}) => ({
+  plugins: [
+    new CleanWebpackPlugin(dirsToClean, options),
+  ],
+});
+
 exports.autoprefix = {
   loader: 'postcss-loader',
   options: {
@@ -103,14 +110,14 @@ exports.autoprefix = {
   },
 };
 
-exports.generateSourceMaps = ({ type }) => ({
-  devtool: type,
+exports.minifyJavaScript = () => ({
+  plugins: [
+    new BabelWebpackPlugin(),
+  ],
 });
 
-exports.uglifyJS = () => ({
-  plugins: [
-    new UglifyJSPlugin({}),
-  ],
+exports.generateSourceMaps = ({ type }) => ({
+  devtool: type,
 });
 
 exports.extractBundles = bundles => ({

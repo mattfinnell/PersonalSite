@@ -29,21 +29,28 @@
 		{% endif %}
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-		{% if config.DEVELOPMENT %}
-      <link rel="stylesheet" href="http://localhost:8080/website/static/dist/css/vendor.css">
-      <link rel="stylesheet" href="http://localhost:8080/website/static/dist/css/app.css">
+    {% if config.DEVELOPMENT %}
+      <link rel="stylesheet" href="http://localhost:8080/website/static/build/css/vendor.css">
+      <link rel="stylesheet" href="http://localhost:8080/website/static/build/css/app.css">
+    {% else %}
+      <link rel="stylesheet" href="/static/build/css/vendor.css">
+      <link rel="stylesheet" href="/static/build/css/app.css">
 		{% endif %}
 
     {% block css %}{% endblock %}
-		<noscript><link rel="stylesheet" href="/website/static/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
 	</head>
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_classes %}{% endblock%}">
     {% block content %}{% endblock %}
 
-		{% if config.DEVELOPMENT %}
-      <script src="http://localhost:8080/website/static/dist/js/manifest.bundle.js"></script>
-      <script src="http://localhost:8080/website/static/dist/js/vendor.bundle.js"></script>
-      <script src="http://localhost:8080/website/static/dist/js/app.bundle.js"></script>
+    {% if config.DEVELOPMENT %}
+      <script src="http://localhost:8080/website/static/build/js/manifest.bundle.js"></script>
+      <script src="http://localhost:8080/website/static/build/js/vendor.bundle.js"></script>
+      <script src="http://localhost:8080/website/static/build/js/app.bundle.js"></script>
+    {% else %}
+      <script src="/static/build/js/manifest.bundle.js"></script>
+      <script src="/static/build/js/vendor.bundle.js"></script>
+      <script src="/static/build/js/app.bundle.js"></script>
 		{% endif %}
 
     {% block js %}{% endblock %}

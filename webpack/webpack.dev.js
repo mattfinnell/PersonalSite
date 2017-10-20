@@ -1,4 +1,5 @@
 const webpackCommon = require('./webpack.common.js');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const parts = require('./webpack.parts.js');
 const merge = require('webpack-merge');
 
@@ -18,6 +19,9 @@ module.exports = merge([
         modules: false,
       },
     },
+    plugins: [
+      new HardSourceWebpackPlugin(),
+    ],
   },
   parts.extractCSS({
     test: /\.scss/,
@@ -38,5 +42,4 @@ module.exports = merge([
     use: 'css-loader',
     output: 'css/[name].css',
   }),
-  // parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
 ]);

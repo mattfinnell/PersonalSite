@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const parts = require('./webpack.parts.js');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = merge([
   {
@@ -13,24 +12,34 @@ module.exports = merge([
       app: path.resolve(parts.PATHS.assets, 'js', 'script.js'),
     },
     output: {
-      path: '/website/static/dist/',
-      publicPath: '/website/static/dist/',
+      path: path.resolve('website', 'static', 'build'),
+      publicPath: '/static/build/',
       filename: 'js/[name].bundle.js',
     },
     plugins: [
-      new HardSourceWebpackPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
       }),
     ],
+    devServer: {
+      stats: {
+        children: false,
+        modules: false,
+      },
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    },
   },
-  parts.loadImages(),
   parts.loadFonts({
     options: {
-      name: 'fonts/[name].[ext]',
+      publicPath: '/static/build/',
+      outputPath: 'fonts/',
+      name: '[name].[ext]',
     },
   }),
+  parts.loadImages(),
   parts.extractBundles([
     {
       name: 'vendor',
@@ -45,4 +54,8 @@ module.exports = merge([
       minChunks: Infinity,
     },
   ]),
+  parts.loadJavaScript({
+    include: path.resolve(parts.PATHS.assets, 'js'),
+    exclude: /node_modules/,
+  }),
 ]);
