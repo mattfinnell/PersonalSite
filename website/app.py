@@ -1,5 +1,5 @@
 # Flask Framework
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, render_template
 
 # SQLAlchemy Database
 import flask_sqlalchemy
