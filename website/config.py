@@ -7,7 +7,7 @@ class Config(object) :
     CSRF_ENABLED = True
 
     # Database stuff
-    SQLALCHEMY_DATABASE_URI = os.getenv('CLEARDB_DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Admin page key
