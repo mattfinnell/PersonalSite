@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
-const parts = require('./webpack.parts.js');
+const parts = require('./webpack.parts');
 
 module.exports = merge([
   {
@@ -34,7 +34,6 @@ module.exports = merge([
   },
   parts.loadFonts({
     options: {
-      publicPath: '/static/build/',
       outputPath: 'fonts/',
       name: '[name].[ext]',
     },

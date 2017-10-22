@@ -71,10 +71,12 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
         include,
         exclude,
 
-        use: {
-          loader: 'file-loader',
-          options,
-        },
+        use: [
+          {
+            loader: 'file-loader',
+            options,
+          },
+        ],
       },
     ],
   },

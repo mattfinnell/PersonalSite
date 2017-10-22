@@ -30,8 +30,8 @@
 
     <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
     {% if config.DEVELOPMENT %}
-      <link rel="stylesheet" href="http://localhost:8080/website/static/build/css/vendor.css">
-      <link rel="stylesheet" href="http://localhost:8080/website/static/build/css/app.css">
+      <link rel="stylesheet" href="http://localhost:8080/static/build/css/vendor.css">
+      <link rel="stylesheet" href="http://localhost:8080/static/build/css/app.css">
     {% else %}
       <link rel="stylesheet" href="/static/build/css/vendor.css">
       <link rel="stylesheet" href="/static/build/css/app.css">
@@ -44,9 +44,9 @@
     {% block content %}{% endblock %}
 
     {% if config.DEVELOPMENT %}
-      <script src="http://localhost:8080/website/static/build/js/manifest.bundle.js"></script>
-      <script src="http://localhost:8080/website/static/build/js/vendor.bundle.js"></script>
-      <script src="http://localhost:8080/website/static/build/js/app.bundle.js"></script>
+      <script src="http://localhost:8080/static/build/js/manifest.bundle.js"></script>
+      <script src="http://localhost:8080/static/build/js/vendor.bundle.js"></script>
+      <script src="http://localhost:8080/static/build/js/app.bundle.js"></script>
     {% else %}
       <script src="/static/build/js/manifest.bundle.js"></script>
       <script src="/static/build/js/vendor.bundle.js"></script>

@@ -1,7 +1,7 @@
-const common = require('./webpack.common.js');
+const common = require('./webpack.common');
 const merge = require('webpack-merge');
 const path = require('path');
-const parts = require('./webpack.parts.js');
+const parts = require('./webpack.parts');
 
 module.exports = merge([
   common,
@@ -12,11 +12,6 @@ module.exports = merge([
       parts.autoprefix,
     ],
     output: 'css/[name].css',
-  }),
-  parts.loadFonts({
-    options: {
-      name: 'fonts/[name].[ext]',
-    },
   }),
   parts.extractCSS({
     test: /\.scss/,

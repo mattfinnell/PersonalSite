@@ -1,6 +1,5 @@
-const webpackCommon = require('./webpack.common.js');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const parts = require('./webpack.parts.js');
+const webpackCommon = require('./webpack.common');
+const parts = require('./webpack.parts');
 const merge = require('webpack-merge');
 
 module.exports = merge([
@@ -19,9 +18,6 @@ module.exports = merge([
         modules: false,
       },
     },
-    plugins: [
-      new HardSourceWebpackPlugin(),
-    ],
   },
   parts.extractCSS({
     test: /\.scss/,
