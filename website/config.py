@@ -1,6 +1,7 @@
 import os
 
-class Config(object) :
+
+class Config(object):
     # Typical meta-variables
     APP_NAME = "Personal Website"
     STATIC_FOLDER = "website/static"
@@ -26,16 +27,20 @@ class Config(object) :
     SASS_OUTPUT_STYLE = "expanded"
     SASS_OUTPUT_COMMENTS = True
 
-class DevelopmentConfig(Config) :
+
+class DevelopmentConfig(Config):
     DEVELOPMENT = True
 
-class TestingConfig(Config) :
+
+class TestingConfig(Config):
     TESTING = True
 
-class StagingConfig(Config) :
+
+class StagingConfig(Config):
     STAGING = True
 
-class ProductionConfig(Config) :
+
+class ProductionConfig(Config):
     PRODUCTION = True
     DEBUG = False
 

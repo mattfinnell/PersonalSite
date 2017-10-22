@@ -1,0 +1,37 @@
+{% extends "master.html" %}
+
+{% block title %}Card{% endblock %}
+
+{% block body_classes %}card{% endblock %}
+
+{% block content %}
+	<!-- Wrapper -->
+	<div class="wrapper">
+
+		<!-- Main -->
+    <section id="main">
+      <span class="avatar"><img src="/static/images/BakerBankedSlalom.jpg" alt="" /></span>
+      <div class="information">
+        <h1>Matt Finnell</h1>
+        <h2>Seattle Based Developer</h2>
+        <p>Website Coming Soon</p>
+      </div>
+      <footer class="container">
+        <ul class="row social-media-buttons">
+          <li><a target="_blank" class="fa fa-github"     href="https://github.com/mattfinnell" ></a></li>
+          <li><a target="_blank" class="fa fa-linkedin"   href="https://www.linkedin.com/in/mattfinnell/#" ></a></li>
+          <li><a target="_blank" class="fa fa-instagram"  href="https://www.instagram.com/matt_finnell/" ></a></li>
+          <li><a target="_blank" class="fa fa-soundcloud" href="https://soundcloud.com/mattfinnell" ></a></li>
+          <li><a target="_blank" class="fa fa-envelope-o" href="mailto:mattfinnell104@gmail.com" ></a></li>
+        </ul>
+      </footer>
+    </section>
+
+		<!-- Footer -->
+    <footer id="footer">
+      <ul class="copyright">
+        <li>&copy; Matt Finnell {{ now.year }}</li>
+      </ul>
+    </footer>
+	</div>
+{% endblock %}

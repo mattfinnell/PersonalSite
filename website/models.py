@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class Skill(db.Model):
     __tablename__ = "skills"
 
@@ -9,7 +10,7 @@ class Skill(db.Model):
     name = db.Column(db.String(50), unique=True)
     percent = db.Column(db.Integer, unique=False)
 
-    def __init__(self, name="", percent=0) :
+    def __init__(self, name="", percent=0):
         self.name = name
         self.percent = percent
 

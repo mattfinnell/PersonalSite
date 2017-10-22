@@ -4,7 +4,7 @@ def get_classes_of_type(module, class_type):
     all blueprints from a views module, or orm objects from a models module.
     """
     object_names = filter(
-        lambda x : issubclass(type(getattr(module, x)), class_type),
+        lambda x: issubclass(type(getattr(module, x)), class_type),
         module.__dict__
     )
 
