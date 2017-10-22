@@ -19,7 +19,8 @@ from datetime import datetime
 import website.models as models
 import website.utils as utils
 
-def create_app(config_object) :
+
+def create_app(config_object):
     app = Flask(config_object.APP_NAME)
     app.config.from_object(config_object)
     app.static_folder = config_object.STATIC_FOLDER
@@ -30,28 +31,32 @@ def create_app(config_object) :
         register_context_processors,
     ]
 
-    for r in registration_functions :
+    for r in registration_functions:
         r(app)
 
     return app
 
-def register_database(app) :
+
+def register_database(app):
     models.db.init_app(app)
 
-    with app.app_context() :
+    with app.app_context():
         models.db.create_all()
-
-    admin = Admin(app, name=app.name, template_mode="bootstrap3")
 
     sqlalchemy_models = utils.get_classes_of_type(
         models,
         flask_sqlalchemy._BoundDeclarativeMeta
     )
 
-    for model in sqlalchemy_models :
-        admin.add_view(ModelView(model, models.db.session))
+    # Flask admin stuff, disable for production
+    if not app.config["PRODUCTION"]:
+        admin = Admin(app, name=app.name, template_mode="bootstrap3")
 
-def register_blueprints(app) :
+        for model in sqlalchemy_models:
+            admin.add_view(ModelView(model, models.db.session))
+
+
+def register_blueprints(app):
     view_modules = map(import_string, find_modules("website.views"))
 
     for view_module in view_modules:
@@ -60,10 +65,11 @@ def register_blueprints(app) :
             Blueprint
         )
 
-        for blueprint in blueprints :
+        for blueprint in blueprints:
             app.register_blueprint(blueprint)
 
-def register_context_processors(app) :
+
+def register_context_processors(app):
     @app.context_processor
-    def jinja_addons() :
-        return {"now" : datetime.now()}
+    def jinja_addons():
+        return {"now": datetime.now()}
