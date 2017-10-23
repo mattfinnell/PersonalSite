@@ -22,15 +22,6 @@ module.exports = merge([
         jQuery: 'jquery',
       }),
     ],
-    devServer: {
-      stats: {
-        children: false,
-        modules: false,
-      },
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    },
   },
   parts.loadFonts({
     options: {

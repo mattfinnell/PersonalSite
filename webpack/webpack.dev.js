@@ -9,6 +9,7 @@ module.exports = merge([
     output: {
       devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
     },
+    devtool: 'cheap-eval-source-map',
     devServer: {
       headers: {
         'Access-Control-Allow-Origin': '*',

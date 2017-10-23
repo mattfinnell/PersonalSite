@@ -1,5 +1,4 @@
 @import '~source-sans-pro/source-sans-pro.css';
-
 @import "../abstracts/variables";
 
 body {
@@ -16,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 a, a:link, a:visited, a:active {
  text-decoration : none;
  color : $text_color;
+
+ p & {
+   text-decoration : underline #bbb;
+ }
 }
 
 .major {
